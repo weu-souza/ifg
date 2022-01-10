@@ -1,7 +1,7 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista05.exercicio01;
 
 
-import java.util.Scanner;
+
 
 public class Aplicativo {
     public static void main(String[] args) {
