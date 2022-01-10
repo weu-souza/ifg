@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista05.exercicio05;
 import java.time.LocalDate;
-import java.util.Scanner;
+
 
 
 public class Datas {
