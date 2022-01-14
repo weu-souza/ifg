@@ -18,9 +18,7 @@ public class Painel extends  JFrame {
     private JButton vipButton;
     private JButton dadosDoEventoButton;
 
-    private void createUIComponents() {
 
-    }
     public Painel(){
         setContentPane(painel);
         setTitle("Ingresso");
