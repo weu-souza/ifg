@@ -20,11 +20,16 @@ public class Funcionario {
     }
 
     public Funcionario() {
+        System.out.println("digite o primeiro nome: ");
+       setPrimeiroNome(scanner.next());
+        System.out.println("digite o sobrenome: ");
+        setSobrenome(scanner.next());
+        System.out.println("digite o salario: ");
+        setSalarioMensal(scanner.nextDouble());
     }
 
     public String getPrimeiroNome() {
-        System.out.println("digite o primeiro nome: ");
-        primeiroNome = scanner.next();
+
         return primeiroNome;
     }
 
@@ -33,8 +38,7 @@ public class Funcionario {
     }
 
     public String getSobrenome() {
-        System.out.println("digite o sobrenome: ");
-        sobrenome = scanner.next();
+
         return sobrenome;
     }
 
@@ -49,9 +53,6 @@ public class Funcionario {
     }
 
     public double getSalarioMensal() {
-        System.out.println("digite o salario: ");
-        salarioMensal = scanner.nextDouble();
-
         return salarioMensal;
     }
 
@@ -62,11 +63,19 @@ public class Funcionario {
     }
 
     public double aumento() {
-        return this.salarioMensal * 0.1;
+        double aumento = this.salarioMensal * 0.1;
+        return aumento*12;
     }
 
     public double salarioAnualComAumento() {
-        return aumento() * 12;
+
+        return this.salarioAnual()+aumento();
+    }
+
+    public String dadosFuncionario(){
+        return "\n"+"o Funcionario " + getPrimeiroNome() +" "  + getSobrenome() + "\n"+ "salario mensal de: "+getSalarioMensal()+
+               "\n"+ "recebe o salario anual de: "+"\n" + salarioAnual() + "\n"+ "com aumento de: " + aumento() +"\n"+
+                "tem o salario final de: " + salarioAnualComAumento();
     }
 
 }

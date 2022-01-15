@@ -1,4 +1,4 @@
-package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista05.exercicio04;
+package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista05.exercicio05.exercicio04;
 
 public class Campo {
    private boolean vazio;

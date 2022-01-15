@@ -20,6 +20,7 @@ public class Carro {
     private String cambioAutomatico;
     private int volumeDeCombustivel;
     private int autonomia;
+    private String escolher;
 
 
     public Carro(int numeroDePortas) {
@@ -28,7 +29,32 @@ public class Carro {
     }
 
     public Carro() {
+setModelo("indefinido");
+setCor("azul");
+setAno("2013");
+setChassi("00000000000000000");
+setMarca("indefinida");
+setProprietario("weuller souza");
+setVelocidadeAtual(20);
+setVelocidadeMaxima(120);
+setNumeroDePortas(4);
+setTetoSolar("sim");
+setCambioAutomatico("sim");
+setVolumeDeCombustivel(50);
+setAutonomia(13);
+setNumeroMarchas(6);
+        System.out.println("você quer acelerar ou freiar o carro;");
+        escolher = scanner.next();
 
+
+
+
+        if(escolher.equals("acelerar")){
+            System.out.println(acelerar());
+        }
+        if(escolher.equals("freiar")){
+            System.out.println(freiar());
+        }
 
     }
 
@@ -51,10 +77,17 @@ public class Carro {
 
     }
 
+    public String getMarca() {
+        return"marca: "+ marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
     public String getModelo() {
-        System.out.println();
-        modelo = "indefinido";
+
+
         return "o modelo é: " + modelo;
     }
 
@@ -64,7 +97,7 @@ public class Carro {
     }
 
     public String getCor() {
-        cor = "azul";
+
         return "a cor é: " + cor;
     }
 
@@ -74,7 +107,7 @@ public class Carro {
     }
 
     public String getAno() {
-        ano = "2013";
+
         return "o ano é: " + ano;
     }
 
@@ -84,7 +117,7 @@ public class Carro {
     }
 
     public String getChassi() {
-        chassi = "00000000000000000";
+
         return "chassi: " + chassi;
     }
 
@@ -94,7 +127,7 @@ public class Carro {
     }
 
     public String getProprietario() {
-        proprietario = "weuller souza";
+
         return "proprietario: " + proprietario;
     }
 
@@ -137,7 +170,7 @@ public class Carro {
 
 
     public String getTetoSolar() {
-        tetoSolar = "sim";
+
         return "teto solar: " + tetoSolar;
     }
 
@@ -155,7 +188,7 @@ public class Carro {
     }
 
     public String getCambioAutomatico() {
-        cambioAutomatico = "sim";
+
         return "cambio automatico: " + cambioAutomatico;
     }
 
@@ -166,8 +199,6 @@ public class Carro {
     }
 
     public int getVolumeDeCombustivel() {
-        System.out.println("quantidade de gasolina colocada: ");
-        volumeDeCombustivel = scanner.nextInt();
         return volumeDeCombustivel;
     }
 
@@ -177,7 +208,7 @@ public class Carro {
 
     public int getAutonomia() {
 
-        autonomia = 13;
+
         return autonomia;
     }
 
@@ -282,6 +313,15 @@ public class Carro {
 
     public int gastogasolinaNoPercurso() {
         return autonomia * volumeDeCombustivel;
+    }
+
+    public String dadosCarro(){
+        return "A quantidade de km rodado é: " + gastogasolinaNoPercurso()+"\n"+getMarca()+"\n"+getModelo() + "\n"
+                + getCor() + "\n" + getAno() + "\n" + getChassi() + "\n" + getProprietario() +
+                "\n"+"velocidade Atual: " + getVelocidadeAtual() + "\n"+ "Velocidade Maxima: " + getVelocidadeMaxima() + "\n" + getTetoSolar() +
+                "\n" + getCambioAutomatico() +
+                "\n"+"gasolina: " + getVolumeDeCombustivel() + "\n"+"autonomia: " + getAutonomia()+"\n" + "numero de portas = " + getNumeroDePortas()+
+                "\n"+"numero de marcha: "+getNumeroMarchas();
     }
 
 

@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import java.util.Scanner;
 
 public class Proprietario {
-    Scanner scanner = new Scanner(System.in);
+
 
 
     private String nome;
@@ -27,6 +27,17 @@ public class Proprietario {
     private LocalDate dataNascimento;
 
     public Proprietario() {
+        setNome("weuller");
+        setRg("00000");
+        setCpf("0");
+        setTelefone("00000");
+        setRua("8");
+        setBairro("bairro das palmeiras");
+        setCidade("cidade hipotetica");
+        setEstado("distrito Federal");
+        setCep("000000");
+        setComplemento("indefinido");
+        setDataNascimento(LocalDate.parse("1996-05-25"));
     }
 
     public Proprietario(String nome, String rg, String cpf, String telefone, String rua, String bairro, String cidade, String estado, String cep, String complemento, LocalDate dataNascimento) {
@@ -41,11 +52,7 @@ public class Proprietario {
         this.cep = cep;
         this.complemento = complemento;
         this.dataNascimento = dataNascimento;
-        if (validarCpf(cpf)) {
-            this.cpf = cpf;
-        } else {
-            this.cpf = "00000000000";
-        }
+
 
     }
 
@@ -144,11 +151,12 @@ public class Proprietario {
     }
 
     public String getCpf() {
-        return cpf;
+        return (this.cpf.substring(0, 3) + "." + this.cpf.substring(3, 6) + "." +
+                this.cpf.substring(6, 9) + "-" + this.cpf.substring(9, 11));
     }
 
     public LocalDate getDataNascimento() {
-        return dataNascimento;
+        return LocalDate.parse(Idade());
     }
 
     public void setDataNascimento(LocalDate dataNascimento) {
@@ -156,7 +164,7 @@ public class Proprietario {
         this.dataNascimento = dataNascimento;
     }
 
-    public String Idade() {//yyyy-MM-dd
+    public String Idade() {
         Calendar calHoje = GregorianCalendar.getInstance();
         int diah = calHoje.get(Calendar.DAY_OF_MONTH);
         int mesh = calHoje.get(Calendar.MONTH) + 1;
@@ -213,7 +221,7 @@ public class Proprietario {
             }
         }
 
-        System.out.println(anos + "a " + meses + "m " + dias + "d");
+
         return String.valueOf(anos);
     }
 
@@ -275,6 +283,14 @@ public class Proprietario {
         return String.valueOf(digGerado);
     }
 
+
+
+
+    public String dadosProprietarios(){
+        return"nome: "+getNome()+"\n"+"cpf: "+getCpf()+"\n"+"rg: "+getRg()+
+                "\n"+"telefone: "+getTelefone()+"\n"+"rua: "+getRua()+"\n"+"bairro: "+getBairro()+"\n"+"cidade: "
+                +getCidade()+"\n"+"estado: "+getEstado()+"\n"+"cep: "+getCep()+"\n"+"complemento: "+getComplemento()+"\n"+"idade: "+Idade();
+    }
 }
 
 

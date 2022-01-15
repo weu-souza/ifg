@@ -9,9 +9,7 @@ public class Aplicativo {
 
         Funcionario funcionario = new Funcionario();
 
-        System.out.println("o Funcionario " + funcionario.getPrimeiroNome() +" "  + funcionario.getSobrenome() + "\n"+ "salario mensal de: "+funcionario.getSalarioMensal()+
-                "recebe o salario anual de: "+"\n" + funcionario.salarioAnual() + "\n"+ "com aumento de: " + funcionario.aumento() +"\n"+
-                "tem o salario final de: " + funcionario.salarioAnualComAumento());
+        System.out.println(funcionario.dadosFuncionario());
 
     }
 
