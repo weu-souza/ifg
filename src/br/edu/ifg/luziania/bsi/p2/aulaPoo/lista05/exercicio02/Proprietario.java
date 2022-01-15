@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class Proprietario {
 
 
-
     private String nome;
     private String rg;
     private String cpf;
@@ -151,8 +150,7 @@ public class Proprietario {
     }
 
     public String getCpf() {
-        return (this.cpf.substring(0, 3) + "." + this.cpf.substring(3, 6) + "." +
-                this.cpf.substring(6, 9) + "-" + this.cpf.substring(9, 11));
+        return (this.cpf.substring(0, 3) + "." + this.cpf.substring(3, 6) + "." + this.cpf.substring(6, 9) + "-" + this.cpf.substring(9, 11));
     }
 
     public LocalDate getDataNascimento() {
@@ -235,16 +233,13 @@ public class Proprietario {
             String cpfGerado = "";
             this.cpf = cpf;
             removerCaracteres();
-            if (verificarSeTamanhoInvalido(this.cpf))
-                return false;
-            if (verificarSeDigIguais(this.cpf))
-                return false;
+            if (verificarSeTamanhoInvalido(this.cpf)) return false;
+            if (verificarSeDigIguais(this.cpf)) return false;
             cpfGerado = this.cpf.substring(0, 9);
             cpfGerado = cpfGerado.concat(calculoComCpf(cpfGerado));
             cpfGerado = cpfGerado.concat(calculoComCpf(cpfGerado));
 
-            if (!cpfGerado.equals(this.cpf))
-                return false;
+            if (!cpfGerado.equals(this.cpf)) return false;
         }
         return true;
     }
@@ -255,8 +250,7 @@ public class Proprietario {
     }
 
     private boolean verificarSeTamanhoInvalido(String cpf) {
-        if (cpf.length() != 11)
-            return true;
+        if (cpf.length() != 11) return true;
         return false;
     }
 
@@ -265,8 +259,7 @@ public class Proprietario {
         char primDig = '0';
         char[] charCpf = cpf.toCharArray();
         for (char c : charCpf)
-            if (c != primDig)
-                return false;
+            if (c != primDig) return false;
         return true;
     }
 
@@ -276,20 +269,14 @@ public class Proprietario {
         char[] charCpf = cpf.toCharArray();
         for (int i = 0; i < cpf.length(); i++)
             digGerado += (charCpf[i] - 48) * mult--;
-        if (digGerado % 11 < 2)
-            digGerado = 0;
-        else
-            digGerado = 11 - digGerado % 11;
+        if (digGerado % 11 < 2) digGerado = 0;
+        else digGerado = 11 - digGerado % 11;
         return String.valueOf(digGerado);
     }
 
 
-
-
-    public String dadosProprietarios(){
-        return"nome: "+getNome()+"\n"+"cpf: "+getCpf()+"\n"+"rg: "+getRg()+
-                "\n"+"telefone: "+getTelefone()+"\n"+"rua: "+getRua()+"\n"+"bairro: "+getBairro()+"\n"+"cidade: "
-                +getCidade()+"\n"+"estado: "+getEstado()+"\n"+"cep: "+getCep()+"\n"+"complemento: "+getComplemento()+"\n"+"idade: "+Idade();
+    public String dadosProprietarios() {
+        return "nome: " + getNome() + "\n" + "cpf: " + getCpf() + "\n" + "rg: " + getRg() + "\n" + "telefone: " + getTelefone() + "\n" + "rua: " + getRua() + "\n" + "bairro: " + getBairro() + "\n" + "cidade: " + getCidade() + "\n" + "estado: " + getEstado() + "\n" + "cep: " + getCep() + "\n" + "complemento: " + getComplemento() + "\n" + "idade: " + Idade();
     }
 }
 
