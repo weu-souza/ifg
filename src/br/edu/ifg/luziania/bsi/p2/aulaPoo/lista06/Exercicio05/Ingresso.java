@@ -11,7 +11,7 @@ public class Ingresso {
     public Ingresso() {
         setValorIngresso(50.0);
         setNomeEvento("show...");
-        setDataEvento(LocalDate.parse("2021-02-25"));
+        setDataEvento(LocalDate.of(2021, 2, 25));
     }
 
     public Ingresso(LocalDate dataEvento, String nomeEvento, double valorIngresso) {
@@ -20,8 +20,9 @@ public class Ingresso {
         this.valorIngresso = valorIngresso;
     }
 
-    public LocalDate getDataEvento() {
-        return dataEvento;
+    public String getDataEvento() {
+        String mes = this.dataEvento.getMonthValue() < 10 ? "0" + this.dataEvento.getMonthValue() : this.dataEvento.getMonthValue() + "";
+        return this.dataEvento.getDayOfMonth() + "/" + mes + "/" + this.dataEvento.getYear();
     }
 
     public void setDataEvento(LocalDate dataEvento) {

@@ -2,6 +2,9 @@ package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio01;
 
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
 import java.util.Scanner;
 
 
@@ -31,10 +34,9 @@ public class Pessoa {
     }
 
 
-    public LocalDate getNascimento() {
-
-
-      return nascimento;
+    public String getNascimento() {
+        String mes = this.nascimento.getMonthValue() < 10 ? "0" + this.nascimento.getMonthValue() : this.nascimento.getMonthValue() + "";
+        return this.nascimento.getDayOfMonth() + "/" + mes + "/" + this.nascimento.getYear();
     }
 
     public void setNascimento(LocalDate nascimento) {
@@ -45,7 +47,6 @@ public class Pessoa {
     }
 
 
-
     public String getGenero() {
         return genero;
     }
@@ -54,11 +55,9 @@ public class Pessoa {
         this.genero = genero;
         if (genero.equals("m") || genero.equals("M") || genero.equals("masculino") || genero.equals("Masculino")) {
             this.genero = "Masculino";
-        }
-        else if(genero.equals("f") || genero.equals("F") || genero.equals("feminino") || genero.equals("Feminino")){
-           this.genero = "Feminino";
-        }
-        else {
+        } else if (genero.equals("f") || genero.equals("F") || genero.equals("feminino") || genero.equals("Feminino")) {
+            this.genero = "Feminino";
+        } else {
             System.out.println("Genero biologico invalido");
 
         }

@@ -2,6 +2,7 @@ package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio01;
 
 import java.time.LocalDate;
 
+
 public class Cliente extends Pessoa {
     private String cpf;
     private String endereco;
@@ -11,7 +12,7 @@ public class Cliente extends Pessoa {
         setCpf("00000000000");
         setNome("jasmine");
         setGenero("f");
-        setNascimento(LocalDate.parse("1996-12-05"));
+        setNascimento(LocalDate.of(1996,5,25));
 
     }
 
