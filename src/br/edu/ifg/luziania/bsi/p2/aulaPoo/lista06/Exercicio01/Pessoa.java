@@ -2,9 +2,6 @@ package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio01;
 
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Locale;
 import java.util.Scanner;
 
 
@@ -38,7 +35,6 @@ public class Pessoa {
         String mes = this.nascimento.getMonthValue() < 10 ? "0" + this.nascimento.getMonthValue() : this.nascimento.getMonthValue() + "";
         return this.nascimento.getDayOfMonth() + "/" + mes + "/" + this.nascimento.getYear();
     }
-
     public void setNascimento(LocalDate nascimento) {
 
         this.nascimento = nascimento;

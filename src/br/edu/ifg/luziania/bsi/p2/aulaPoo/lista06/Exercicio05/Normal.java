@@ -4,15 +4,15 @@ import java.time.LocalDate;
 
 public class Normal extends Ingresso {
 
-    public Normal() {
+    public Normal(String dataEvento, String nomeEvento, double valorIngresso) {
     }
 
     public Normal(LocalDate dataEvento, String nomeEvento, double valorIngresso) {
         super(dataEvento, nomeEvento, valorIngresso);
     }
 
-    public String ingressoNormal() {
+    public void ingressoNormal() {
 
-        return "Ingresso Normal: " + imprimeValor();
+        System.out.println("\n"+"Ingresso Normal");
     }
 }

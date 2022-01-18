@@ -4,8 +4,12 @@ public class Velho extends Imovel {
     private double desconto;
 
     public Velho() {
-        setDesconto(120.00);
 
+
+    }
+
+    public Velho(double desconto) {
+        this.desconto = desconto;
     }
 
     public Velho(String endereco, Double preco, double desconto) {
@@ -27,8 +31,8 @@ public class Velho extends Imovel {
         return getPreco()-getDesconto();
     }
 
-    @Override
-    public String toString() {
-        return ""+"\n"+"desconto: "+getDesconto()+"R$"+"\n"+"preço Final: "+desconto();
+
+    public void dadosVelho() {
+        System.out.println(""+"\n"+"desconto: "+getDesconto()+"R$"+"\n"+"preço Final: "+desconto());
     }
 }

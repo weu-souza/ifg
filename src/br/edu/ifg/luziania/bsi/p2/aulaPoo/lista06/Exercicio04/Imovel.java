@@ -5,8 +5,7 @@ public class Imovel {
     private Double preco;
 
     public Imovel() {
-        setEndereco("rua 528 loja 21...");
-        setPreco(510.00);
+
     }
 
     public Imovel(String endereco, Double preco) {
@@ -30,8 +29,8 @@ public class Imovel {
         this.preco = preco;
     }
 
-    @Override
-    public String toString() {
-        return "endereço: "+getEndereco()+"\n"+"preço: "+getPreco()+" R$";
+
+    public void dadosImovel() {
+        System.out.println("endereço: "+getEndereco()+"\n"+"preço: "+getPreco()+" R$");
     }
 }

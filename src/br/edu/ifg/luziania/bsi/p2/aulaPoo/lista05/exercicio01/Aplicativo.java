@@ -5,10 +5,8 @@ public class Aplicativo {
     public static void main(String[] args) {
 
 
-        Funcionario funcionario = new Funcionario();
-
-        System.out.println(funcionario.dadosFuncionario());
-
+       Funcionario f = new Funcionario("weuller","souza",1200);
+    f.dadosFuncionario();
     }
 
 

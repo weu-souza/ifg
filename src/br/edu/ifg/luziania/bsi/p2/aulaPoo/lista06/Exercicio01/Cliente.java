@@ -3,16 +3,13 @@ package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio01;
 import java.time.LocalDate;
 
 
+
 public class Cliente extends Pessoa {
     private String cpf;
     private String endereco;
 
     public Cliente() {
-        setEndereco("rua5 casa 12...");
-        setCpf("00000000000");
-        setNome("jasmine");
-        setGenero("f");
-        setNascimento(LocalDate.of(1996,5,25));
+
 
     }
 
@@ -28,19 +25,7 @@ public class Cliente extends Pessoa {
         this.endereco = endereco;
     }
 
-    public String getCpf() {
-        return (this.cpf.substring(0, 3) + "." + this.cpf.substring(3, 6) + "." +
-                this.cpf.substring(6, 9) + "-" + this.cpf.substring(9, 11));
-    }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-        if (validarCpf(cpf)) {
-            this.cpf = cpf;
-        } else {
-            this.cpf = "00000000000";
-        }
-    }
 
     public String getEndereco() {
         return endereco;
@@ -49,66 +34,67 @@ public class Cliente extends Pessoa {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+    public String validarCpf() {
 
-    public boolean validarCpf(String cpf) {
         if (cpf == null) {
-            return false;
+            return "0";
         } else {
-            String cpfGerado = "";
-            this.cpf = cpf;
-            removerCaracteres();
-            if (verificarSeTamanhoInvalido(this.cpf))
-                return false;
-            if (verificarSeDigIguais(this.cpf))
-                return false;
-            cpfGerado = this.cpf.substring(0, 9);
-            cpfGerado = cpfGerado.concat(calculoComCpf(cpfGerado));
-            cpfGerado = cpfGerado.concat(calculoComCpf(cpfGerado));
+            String cpf = "";
 
-            if (!cpfGerado.equals(this.cpf))
-                return false;
+            removCaracter();
+            if (verificarTamanhoInva(this.cpf))
+                return "000.000.000-00";
+            if (verifiDigIguais(this.cpf))
+                return "000.000.000-00";
+             this.cpf.substring(0, 9);
+             this.cpf.concat(calCPF(this.cpf));
+             this.cpf.concat(calCPF(this.cpf));
+
+            if (!this.cpf.equals(this.cpf))
+                return "000.000.000-00";
         }
-        return true;
+        return (this.cpf.substring(0, 3) + "." + this.cpf.substring(3, 6) + "." + this.cpf.substring(6, 9) + "-" + this.cpf.substring(9, 11));
     }
 
-    private void removerCaracteres() {
+    private void removCaracter() {
         this.cpf = this.cpf.replace("-", "");
         this.cpf = this.cpf.replace(".", "");
     }
 
-    private boolean verificarSeTamanhoInvalido(String cpf) {
-        if (cpf.length() != 11)
+    private boolean verificarTamanhoInva(String CPF) {
+        if (CPF.length() != 11)
             return true;
         return false;
     }
 
-    private boolean verificarSeDigIguais(String cpf) {
-        //char primDig = cpf.charAt(0);
-        char primDig = '0';
-        char[] charCpf = cpf.toCharArray();
-        for (char c : charCpf)
-            if (c != primDig)
+    private boolean verifiDigIguais(String CPF) {
+        char digiprim = '0';
+        char[] charCPF = CPF.toCharArray();
+        for (char c : charCPF)
+            if (c != digiprim)
                 return false;
         return true;
     }
 
-    private String calculoComCpf(String cpf) {
-        int digGerado = 0;
-        int mult = cpf.length() + 1;
-        char[] charCpf = cpf.toCharArray();
-        for (int i = 0; i < cpf.length(); i++)
-            digGerado += (charCpf[i] - 48) * mult--;
-        if (digGerado % 11 < 2)
-            digGerado = 0;
+    private String calCPF(String CPF) {
+        int digiGera = 0;
+        int mult = CPF.length() + 1;
+        char[] charCPF = CPF.toCharArray();
+        for (int i = 0; i < CPF.length(); i++)
+            digiGera += (charCPF[i] - 48) * mult--;
+        if (digiGera % 11 < 2)
+            digiGera = 0;
         else
-            digGerado = 11 - digGerado % 11;
-        return String.valueOf(digGerado);
+            digiGera = 11 - digiGera % 11;
+        return String.valueOf(digiGera);
     }
 
-    public String exibirDadosDoCliente() {
-        return ""+"\n" +"Nome do Cliente: " + getNome() + "\n" + "Cpf do Cliente: " + getCpf() + "\n" + "Genero do Cliente: " + getGenero() + "\n" +
+
+
+    public void exibirDadosDoCliente() {
+        System.out.println(""+"\n" +"Nome do Cliente: " + getNome() + "\n" + "Cpf do Cliente: " + validarCpf() + "\n" + "Genero do Cliente: " + getGenero() + "\n" +
                 "Data De Nascimento Do Cliente: " + getNascimento() +
-                "\n" + "Endereço Do Cliente : " + getEndereco();
+                "\n" + "Endereço Do Cliente : " + getEndereco());
 
     }
 

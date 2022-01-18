@@ -4,11 +4,7 @@ public class Gato extends Felino{
     private String raca;
 
     public Gato() {
-       setRaca("vira-lata");
-       setAlimento("ração de gato");
-       setVelocidade(2.5);
-       setIdade(4);
-       setPeso(10.5);
+
     }
 
     public Gato(double peso, Integer idade, String alimento, double velocidade, String raca) {
@@ -29,9 +25,9 @@ public class Gato extends Felino{
         this.raca = raca;
     }
 
-    @Override
-    public String toString() {
-        return ""+"\n"+"idade do gato: "+getIdade()+" anos"+"\n"+"Velocidade do gato: "+getVelocidade()+"km"+"\n"+"Peso do gato: "
-                +getPeso()+" kg"+"\n"+"Alimento do gato: "+getAlimento()+"\n"+"Raça do gato: "+getRaca();
+
+    public void dadosGato() {
+        System.out.println("\n"+"Gato"+"\n"+"idade do gato: "+getIdade()+" anos"+"\n"+"Velocidade do gato: "+getVelocidade()+"km"+"\n"+"Peso do gato: "
+                +getPeso()+" kg"+"\n"+"Alimento do gato: "+getAlimento()+"\n"+"Raça do gato: "+getRaca());
     }
 }

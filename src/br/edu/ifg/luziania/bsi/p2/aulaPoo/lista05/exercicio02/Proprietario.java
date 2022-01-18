@@ -26,17 +26,7 @@ public class Proprietario {
     private LocalDate dataNascimento;
 
     public Proprietario() {
-        setNome("weuller");
-        setRg("00000");
-        setCpf("0");
-        setTelefone("00000");
-        setRua("8");
-        setBairro("bairro das palmeiras");
-        setCidade("cidade hipotetica");
-        setEstado("distrito Federal");
-        setCep("000000");
-        setComplemento("indefinido");
-        setDataNascimento(LocalDate.parse("1996-05-25"));
+
     }
 
     public Proprietario(String nome, String rg, String cpf, String telefone, String rua, String bairro, String cidade, String estado, String cep, String complemento, LocalDate dataNascimento) {
@@ -139,20 +129,6 @@ public class Proprietario {
         this.complemento = complemento;
     }
 
-    public void setCpf(String cpf) {
-        if (validarCpf(cpf)) {
-            this.cpf = cpf;
-        } else {
-            this.cpf = "00000000000";
-        }
-
-
-    }
-
-    public String getCpf() {
-        return (this.cpf.substring(0, 3) + "." + this.cpf.substring(3, 6) + "." + this.cpf.substring(6, 9) + "-" + this.cpf.substring(9, 11));
-    }
-
     public LocalDate getDataNascimento() {
         return LocalDate.parse(Idade());
     }
@@ -170,9 +146,9 @@ public class Proprietario {
 
         // Data do nascimento.
         String[] quebraDN = this.dataNascimento.toString().split("-");
-        int dian = Integer.valueOf(quebraDN[2]);
-        int mesn = Integer.valueOf(quebraDN[1]);
-        int anon = Integer.valueOf(quebraDN[0]);
+        int dian = Integer.parseInt(quebraDN[2]);
+        int mesn = Integer.parseInt(quebraDN[1]);
+        int anon = Integer.parseInt(quebraDN[0]);
 
         String strNiver = anoh + "-" + mesn + "-" + dian;
         Calendar calNiver = Calendar.getInstance();
@@ -196,7 +172,7 @@ public class Proprietario {
             meses = 12 + meses;
 
             if (diah < dian) {
-                meses--;
+                meses-=meses;
             }
         } else {
             if (diah < dian) {
@@ -226,57 +202,64 @@ public class Proprietario {
     private class FormataData {
     }
 
-    public boolean validarCpf(String cpf) {
-        if (cpf == null) {
-            return false;
-        } else {
-            String cpfGerado = "";
-            this.cpf = cpf;
-            removerCaracteres();
-            if (verificarSeTamanhoInvalido(this.cpf)) return false;
-            if (verificarSeDigIguais(this.cpf)) return false;
-            cpfGerado = this.cpf.substring(0, 9);
-            cpfGerado = cpfGerado.concat(calculoComCpf(cpfGerado));
-            cpfGerado = cpfGerado.concat(calculoComCpf(cpfGerado));
+    public String validarCpf() {
 
-            if (!cpfGerado.equals(this.cpf)) return false;
+        if (cpf == null) {
+            return "0";
+        } else {
+            String cpf = "";
+
+            removCaracter();
+            if (verificarTamanhoInva(this.cpf))
+                return "000.000.000-00";
+            if (verifiDigIguais(this.cpf))
+                return "000.000.000-00";
+            this.cpf.substring(0, 9);
+            this.cpf.concat(calCPF(this.cpf));
+            this.cpf.concat(calCPF(this.cpf));
+
+            if (!this.cpf.equals(this.cpf))
+                return "000.000.000-00";
         }
-        return true;
+        return (this.cpf.substring(0, 3) + "." + this.cpf.substring(3, 6) + "." + this.cpf.substring(6, 9) + "-" + this.cpf.substring(9, 11));
     }
 
-    private void removerCaracteres() {
+    private void removCaracter() {
         this.cpf = this.cpf.replace("-", "");
         this.cpf = this.cpf.replace(".", "");
     }
 
-    private boolean verificarSeTamanhoInvalido(String cpf) {
-        if (cpf.length() != 11) return true;
+    private boolean verificarTamanhoInva(String CPF) {
+        if (CPF.length() != 11)
+            return true;
         return false;
     }
 
-    private boolean verificarSeDigIguais(String cpf) {
-        //char primDig = cpf.charAt(0);
-        char primDig = '0';
-        char[] charCpf = cpf.toCharArray();
-        for (char c : charCpf)
-            if (c != primDig) return false;
+    private boolean verifiDigIguais(String CPF) {
+        char digiprim = '0';
+        char[] charCPF = CPF.toCharArray();
+        for (char c : charCPF)
+            if (c != digiprim)
+                return false;
         return true;
     }
 
-    private String calculoComCpf(String cpf) {
-        int digGerado = 0;
-        int mult = cpf.length() + 1;
-        char[] charCpf = cpf.toCharArray();
-        for (int i = 0; i < cpf.length(); i++)
-            digGerado += (charCpf[i] - 48) * mult--;
-        if (digGerado % 11 < 2) digGerado = 0;
-        else digGerado = 11 - digGerado % 11;
-        return String.valueOf(digGerado);
+    private String calCPF(String CPF) {
+        int digiGera = 0;
+        int mult = CPF.length() + 1;
+        char[] charCPF = CPF.toCharArray();
+        for (int i = 0; i < CPF.length(); i++)
+            digiGera += (charCPF[i] - 48) * mult--;
+        if (digiGera % 11 < 2)
+            digiGera = 0;
+        else
+            digiGera = 11 - digiGera % 11;
+        return String.valueOf(digiGera);
     }
 
 
     public String dadosProprietarios() {
-        return "nome: " + getNome() + "\n" + "cpf: " + getCpf() + "\n" + "rg: " + getRg() + "\n" + "telefone: " + getTelefone() + "\n" + "rua: " + getRua() + "\n" + "bairro: " + getBairro() + "\n" + "cidade: " + getCidade() + "\n" + "estado: " + getEstado() + "\n" + "cep: " + getCep() + "\n" + "complemento: " + getComplemento() + "\n" + "idade: " + Idade();
+        return "nome: " + getNome() + "\n" + "cpf: " + validarCpf() + "\n" + "rg: " + getRg() + "\n" + "telefone: " + getTelefone() + "\n" + "rua: " + getRua() + "\n" + "bairro: " + getBairro() + "\n" + "cidade: " + getCidade() + "\n" + "estado: " + getEstado() + "\n" + "cep: " + getCep() + "\n" + "complemento: " + getComplemento() + "\n" + "idade: " + Idade();
     }
 }
 

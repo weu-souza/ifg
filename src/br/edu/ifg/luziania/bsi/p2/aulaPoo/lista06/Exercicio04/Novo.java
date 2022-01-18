@@ -4,7 +4,11 @@ public class Novo extends Imovel{
    private double adicional;
 
     public Novo() {
-        setAdicional(210.70);
+
+    }
+
+    public Novo(double adicional) {
+        this.adicional = adicional;
     }
 
     public Novo(String endereco, Double preco, double adicional) {
@@ -25,8 +29,8 @@ public class Novo extends Imovel{
         return getPreco()+getAdicional();
     }
 
-    @Override
-    public String toString() {
-        return ""+"\n"+"adicional: "+getAdicional()+" R$"+"\n"+"preço Final: "+PrecoAdicional();
+
+    public void dadosNovo() {
+        System.out.println(""+"\n"+"adicional: "+getAdicional()+" R$"+"\n"+"preço Final: "+PrecoAdicional());
     }
 }

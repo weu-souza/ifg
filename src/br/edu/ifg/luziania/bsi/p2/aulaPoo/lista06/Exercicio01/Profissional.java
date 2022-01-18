@@ -7,11 +7,7 @@ public class Profissional extends Pessoa {
     private String cargo;
 
     public Profissional() {
-        setNome("weuller souza");
-        setRg(Integer.valueOf("085599"));
-        setGenero("m");
-        setCargo("chefe");
-        setNascimento(LocalDate.parse("1997-11-27"));
+
     }
 
     public Profissional(Integer rg, String cargo) {
@@ -41,9 +37,9 @@ public class Profissional extends Pessoa {
         this.cargo = cargo;
     }
 
-    public String exibisDadosProfissionais() {
-        return ""+"\n" +"Nome Do Profissional: " + getNome() + "\n" + "Rg Do Profissional: " + getRg() + "\n" + "Genero Do Profissional: " + getGenero() + "\n"
-                + "Data De Nascimento Do Profissional: " + getNascimento() + "\n" + "Cargo Do Profissional: " + getCargo();
+    public void exibisDadosProfissionais() {
+        System.out.println(""+"\n" +"Nome Do Profissional: " + getNome() + "\n" + "Rg Do Profissional: " + getRg() + "\n" + "Genero Do Profissional: " + getGenero() + "\n"
+                + "Data De Nascimento Do Profissional: " + getNascimento() + "\n" + "Cargo Do Profissional: " + getCargo());
 
 
     }

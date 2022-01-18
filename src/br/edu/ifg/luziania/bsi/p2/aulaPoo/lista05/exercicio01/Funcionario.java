@@ -19,12 +19,7 @@ public class Funcionario {
     }
 
     public Funcionario() {
-        System.out.println("digite o primeiro nome: ");
-        setPrimeiroNome(scanner.next());
-        System.out.println("digite o sobrenome: ");
-        setSobrenome(scanner.next());
-        System.out.println("digite o salario: ");
-        setSalarioMensal(scanner.nextDouble());
+
     }
 
     public String getPrimeiroNome() {
@@ -71,10 +66,23 @@ public class Funcionario {
         return this.salarioAnual() + aumento();
     }
 
-    public String dadosFuncionario() {
-        return "\n" + "o Funcionario " + getPrimeiroNome() + " " + getSobrenome() + "\n" + "salario mensal de: " + getSalarioMensal() +
-                "\n" + "recebe o salario anual de: " + "\n" + salarioAnual() + "\n" + "com aumento de: " + aumento() + "\n" +
-                "tem o salario final de: " + salarioAnualComAumento();
+    public void dadosFuncionario() {
+        System.out.println("\n" + "o Funcionario " + getPrimeiroNome() + " " + getSobrenome());
+        if(getSalarioMensal()>0){
+            System.out.println("\n" + "salario mensal de: " + getSalarioMensal());
+        }
+         if(salarioAnual()>0){
+            System.out.println("recebe o salario anual de: " +  salarioAnual());
+        }
+         if(aumento()>0){
+            System.out.println("com aumento de: " + aumento());
+        }
+         if(salarioAnualComAumento()>0){
+            System.out.println("tem o salario final de: " + salarioAnualComAumento());
+        }
+         else{
+             System.out.println("salario invalido");
+         }
     }
 
 }

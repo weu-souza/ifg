@@ -6,14 +6,11 @@ public class CamaroteSuperior extends Vip {
     private String localizacaoSuperior;
     private double preçoSuperior;
 
-    public CamaroteSuperior() {
-        setPreçoSuperior(2);
-        setLocalizacaoSuperior("Pista A");
-    }
 
-    public CamaroteSuperior(LocalDate dataEvento, String nomeEvento, double valorIngresso, double adicional, String localizacaoSuperior) {
+    public CamaroteSuperior(LocalDate dataEvento, String nomeEvento, double valorIngresso, double adicional, String localizacaoSuperior, double preçoSuperior) {
         super(dataEvento, nomeEvento, valorIngresso, adicional);
         this.localizacaoSuperior = localizacaoSuperior;
+        this.preçoSuperior = preçoSuperior;
     }
 
     public String getLocalizacaoSuperior() {
@@ -37,7 +34,14 @@ public class CamaroteSuperior extends Vip {
         return valorVip() * getPreçoSuperior();
     }
 
-    public String dadosSuperior() {
-        return "Valor Do Ingresso Superior: " + valorSuperior() + "\n" + "Localização Do Ingresso Superior: " + getLocalizacaoSuperior();
+    public void dadosSuperior() {
+        System.out.println("\n"+"Dados Camarote superior"+
+                "\n" + "Localização Do Ingresso Superior: " + getLocalizacaoSuperior());
+        if (valorSuperior()>0){
+            System.out.println("Valor Do Ingresso Superior: " + valorSuperior());
+        }
+        else{
+            System.out.println("valor invalido");
+        }
     }
 }

@@ -49,14 +49,14 @@ public class Datas {
 
 
 
-    public String toString() {
-        return "Data: "+
+    public void data() {
+        System.out.println("Data: "+
                 " " + getDia() +
                 "/" + getMes() +
-                "/" + getAno() ;
+                "/" + getAno());
     }
-    public int avançarDia(int dia){
+    public void avançarDia(int dia){
 
-        return hoje.getDayOfMonth()+1;
+        System.out.println(hoje.getDayOfMonth()+1);
     }
 }

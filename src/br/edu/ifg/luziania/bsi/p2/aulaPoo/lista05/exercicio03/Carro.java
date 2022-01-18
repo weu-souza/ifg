@@ -23,43 +23,15 @@ public class Carro {
     private String escolher;
 
 
-    public Carro(int numeroDePortas) {
-        setNumeroDePortas(numeroDePortas);
-        this.numeroDePortas = numeroDePortas;
-    }
+
 
     public Carro() {
-setModelo("indefinido");
-setCor("azul");
-setAno("2013");
-setChassi("00000000000000000");
-setMarca("indefinida");
-setProprietario("weuller souza");
-setVelocidadeAtual(20);
-setVelocidadeMaxima(120);
-setNumeroDePortas(4);
-setTetoSolar("sim");
-setCambioAutomatico("sim");
-setVolumeDeCombustivel(50);
-setAutonomia(13);
-setNumeroMarchas(6);
-        System.out.println("você quer acelerar ou freiar o carro;");
-        escolher = scanner.next();
 
 
-
-
-        if(escolher.equals("acelerar")){
-            System.out.println(acelerar());
-        }
-        if(escolher.equals("freiar")){
-            System.out.println(freiar());
-        }
 
     }
 
-    public Carro(String modelo, String cor, String ano, String marca, String chassi, String proprietario, int velocidadeMaxima, int velocidadeAtual, int numeroDePortas, String tetoSolar, String cambioAutomatico, int volumeDeCombustivel, int autonomia) {
-        setNumeroDePortas(numeroDePortas);
+    public Carro(String modelo, String cor, String ano, String marca, String chassi, String proprietario, int velocidadeMaxima, int velocidadeAtual, int numeroDePortas, String tetoSolar, Integer numeroMarchas, String cambioAutomatico, int volumeDeCombustivel, int autonomia, String escolher) {
         this.modelo = modelo;
         this.cor = cor;
         this.ano = ano;
@@ -74,9 +46,18 @@ setNumeroMarchas(6);
         this.cambioAutomatico = cambioAutomatico;
         this.volumeDeCombustivel = volumeDeCombustivel;
         this.autonomia = autonomia;
-
+        this.escolher = escolher;
     }
 
+    public void perguntaAcelerar(){
+
+        if(escolher.equals("acelerar")){
+            System.out.println(acelerar());
+        }
+        if(escolher.equals("freiar")){
+            System.out.println(freiar());
+        }
+    }
     public String getMarca() {
         return"marca: "+ marca;
     }
@@ -315,13 +296,13 @@ setNumeroMarchas(6);
         return autonomia * volumeDeCombustivel;
     }
 
-    public String dadosCarro(){
-        return "A quantidade de km rodado é: " + gastogasolinaNoPercurso()+"\n"+getMarca()+"\n"+getModelo() + "\n"
+    public void dadosCarro(){
+        System.out.println( "A quantidade de km rodado é: " + gastogasolinaNoPercurso()+"\n"+getMarca()+"\n"+getModelo() + "\n"
                 + getCor() + "\n" + getAno() + "\n" + getChassi() + "\n" + getProprietario() +
                 "\n"+"velocidade Atual: " + getVelocidadeAtual() + "\n"+ "Velocidade Maxima: " + getVelocidadeMaxima() + "\n" + getTetoSolar() +
                 "\n" + getCambioAutomatico() +
                 "\n"+"gasolina: " + getVolumeDeCombustivel() + "\n"+"autonomia: " + getAutonomia()+"\n" + "numero de portas = " + getNumeroDePortas()+
-                "\n"+"numero de marcha: "+getNumeroMarchas();
+                "\n"+"numero de marcha: "+getNumeroMarchas());
     }
 
 

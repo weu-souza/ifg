@@ -5,9 +5,7 @@ import java.time.LocalDate;
 public class CamaroteInferior extends Vip {
     private String localizacaoInferior;
 
-    public CamaroteInferior() {
-        setLocalizacaoInferior("Pista B");
-    }
+
 
     public CamaroteInferior(LocalDate dataEvento, String nomeEvento, double valorIngresso, double adicional, String localizacaoInferior) {
         super(dataEvento, nomeEvento, valorIngresso, adicional);
@@ -22,7 +20,13 @@ public class CamaroteInferior extends Vip {
         this.localizacaoInferior = localizacaoInferior;
     }
 
-    public String dadosInferior() {
-        return "Localização do camarote inferior: " + getLocalizacaoInferior() + "\n" + "preço do camarote inferior: " + valorVip();
+    public void dadosInferior() {
+        System.out.println("\n"+"Dados camarote Inferior"+"\n"+"Localização do camarote inferior: " + getLocalizacaoInferior());
+        if(valorVip()>0){
+            System.out.println("preço do camarote inferior: " + valorVip());
+        }
+        else{
+            System.out.println("Valor Invalido");
+        }
     }
 }

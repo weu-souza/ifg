@@ -9,9 +9,7 @@ public class Ingresso {
     private double valorIngresso;
 
     public Ingresso() {
-        setValorIngresso(50.0);
-        setNomeEvento("show...");
-        setDataEvento(LocalDate.of(2021, 2, 25));
+
     }
 
     public Ingresso(LocalDate dataEvento, String nomeEvento, double valorIngresso) {
@@ -20,9 +18,9 @@ public class Ingresso {
         this.valorIngresso = valorIngresso;
     }
 
-    public String getDataEvento() {
-        String mes = this.dataEvento.getMonthValue() < 10 ? "0" + this.dataEvento.getMonthValue() : this.dataEvento.getMonthValue() + "";
-        return this.dataEvento.getDayOfMonth() + "/" + mes + "/" + this.dataEvento.getYear();
+    public LocalDate getDataEvento() {
+
+        return dataEvento;
     }
 
     public void setDataEvento(LocalDate dataEvento) {
@@ -38,18 +36,31 @@ public class Ingresso {
     }
 
     public double getValorIngresso() {
-        return valorIngresso;
+
+
+        return valorIngresso ;
     }
 
-    public void setValorIngresso(double valorIngresso) {
-        this.valorIngresso = valorIngresso;
+    public void setValorIngresso() {
+        if(this.valorIngresso < 0){
+            System.out.println("valor invalido");
+        }
+        else{
+            System.out.println(this.valorIngresso);
+        }
+
     }
 
-    public String imprimeValor() {
-        return "" + getValorIngresso();
+    public void imprimeValor() {
+        if(this.valorIngresso < 0){
+            System.out.println("valor invalido");
+        }
+        else{
+            System.out.println(getValorIngresso());
+        }
     }
 
-    public String imprimeDadosDoEvento() {
-        return "Nome do evento: " + getNomeEvento() + "\n" + "Data do Evento: " + getDataEvento();
+    public void imprimeDadosDoEvento() {
+        System.out.println("Dados Do evento"+"\n"+"Nome do evento: " + getNomeEvento() + "\n" + "Data do Evento: " + getDataEvento());
     }
 }

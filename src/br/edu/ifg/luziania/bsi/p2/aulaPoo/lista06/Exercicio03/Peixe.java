@@ -6,11 +6,7 @@ public class Peixe extends Animal {
     private String caracteristica;
 
     public Peixe() {
-        setAlimento("ração para peixe");
-        setIdade(2);
-        setCaracteristica("escamas,olhos,boca...");
-        setPeso(1);
-        setVelocidade(2.1);
+
     }
 
     public Peixe(double peso, Integer idade, String alimento, double velocidade, String caracteristica) {
@@ -25,9 +21,11 @@ public class Peixe extends Animal {
     public void setCaracteristica(String caracteristica) {
         this.caracteristica = caracteristica;
     }
-    public String dadosDoPeixe(){
-        return ""+"\n"+"caracteristica do peixe: "+getCaracteristica()+"\n"+"Alimento do peixe: "+getAlimento()+"\n"+"Idade do peixe: "+getIdade()+" anos"+"\n"+
-                "peso do peixe: "+getPeso()+" kg"+"\n"+"Velocidade do peixe: "+getVelocidade()+" km";
+    public void dadosDoPeixe(){
+        System.out.println( "\n"+"Peixe"+"\n"+"caracteristica do peixe: "+getCaracteristica()+"\n"+"Alimento do peixe: "+getAlimento()+"\n"+"Idade do peixe: "+getIdade()+" anos"+"\n"+
+                "peso do peixe: "+getPeso()+" kg"+"\n"+"Velocidade do peixe: "+getVelocidade()+" km");
 
     }
+
+
 }
