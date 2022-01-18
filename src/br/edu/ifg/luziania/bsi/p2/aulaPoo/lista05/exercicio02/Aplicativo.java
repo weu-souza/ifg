@@ -13,7 +13,7 @@ public class Aplicativo {
                 ,LocalDate.of(1996,05,25));
 
 
-        System.out.println(proprietario.dadosProprietarios());
+        proprietario.dadosProprietarios();
 
 
     }

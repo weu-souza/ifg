@@ -258,8 +258,10 @@ public class Proprietario {
     }
 
 
-    public String dadosProprietarios() {
-        return "nome: " + getNome() + "\n" + "cpf: " + validarCpf() + "\n" + "rg: " + getRg() + "\n" + "telefone: " + getTelefone() + "\n" + "rua: " + getRua() + "\n" + "bairro: " + getBairro() + "\n" + "cidade: " + getCidade() + "\n" + "estado: " + getEstado() + "\n" + "cep: " + getCep() + "\n" + "complemento: " + getComplemento() + "\n" + "idade: " + Idade();
+    public void dadosProprietarios() {
+        System.out.println("nome: " + getNome() + "\n" + "cpf: " + validarCpf() + "\n" + "rg: " + getRg() + "\n" + "telefone: " + getTelefone() + "\n" + "rua: "
+                + getRua() + "\n" + "bairro: " + getBairro() + "\n" + "cidade: " + getCidade() + "\n" + "estado: " + getEstado() + "\n" + "cep: " + getCep() + "\n" + "complemento: "
+                + getComplemento() + "\n" + "idade: " + Idade());
     }
 }
 
