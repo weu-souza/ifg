@@ -3,7 +3,7 @@ package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista05.exercicio01;
 import java.util.Scanner;
 
 public class Funcionario {
-    Scanner scanner = new Scanner(System.in);
+
     private String primeiroNome;
     private String sobrenome;
     private double salarioMensal;
