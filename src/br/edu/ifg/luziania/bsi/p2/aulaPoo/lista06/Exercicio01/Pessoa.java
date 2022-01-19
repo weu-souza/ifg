@@ -2,11 +2,11 @@ package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio01;
 
 
 import java.time.LocalDate;
-import java.util.Scanner;
+
 
 
 public class Pessoa {
-    Scanner scanner = new Scanner(System.in);
+
     private String nome;
     private LocalDate nascimento;
     private String genero;
