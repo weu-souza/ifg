@@ -33,6 +33,13 @@ public class Velho extends Imovel {
 
 
     public void dadosVelho() {
-        System.out.println(""+"\n"+"desconto: "+getDesconto()+"R$"+"\n"+"preço Final: "+desconto());
+        System.out.println("Velho");
+        if(getPreco()>0){
+            System.out.println(""+"\n"+"desconto: "+getDesconto()+"R$"+"\n"+"preço Final: "+desconto());
+        }
+        else{
+            System.out.println("valor invalido!");
+        }
+
     }
 }

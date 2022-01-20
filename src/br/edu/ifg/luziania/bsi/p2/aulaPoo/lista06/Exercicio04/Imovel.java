@@ -31,6 +31,13 @@ public class Imovel {
 
 
     public void dadosImovel() {
-        System.out.println("endereço: "+getEndereco()+"\n"+"preço: "+getPreco()+" R$");
+        System.out.println("Dados do imovel"+"\n"+"endereço: "+getEndereco());
+        if(getPreco()>0){
+            System.out.println("preço: "+getPreco()+" R$"+"\n");
+        }
+        else{
+            System.out.println("valor invalido!");
+        }
+
     }
 }

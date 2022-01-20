@@ -31,6 +31,11 @@ public class Novo extends Imovel{
 
 
     public void dadosNovo() {
-        System.out.println(""+"\n"+"adicional: "+getAdicional()+" R$"+"\n"+"preço Final: "+PrecoAdicional());
+        System.out.println("Novo");
+        if(getPreco()>0){System.out.println(""+"\n"+"adicional: "+getAdicional()+" R$"+"\n"+"preço Final: "+PrecoAdicional()+"\n");}
+        else{
+            System.out.println("valor invalido!");
+        }
+
     }
 }
