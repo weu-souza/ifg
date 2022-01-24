@@ -14,12 +14,7 @@ public class Motocicleta extends Terrestre{
     }
     @Override
     public void setNumRodas(int numRodas) {
-        if(numRodas==2){
-            System.out.println(numRodas);
-        }
-        else{
-            System.out.println("numero de rodas invalido!");
-        }
+
         super.setNumRodas(numRodas);
     }
     @Override
@@ -27,11 +22,7 @@ public class Motocicleta extends Terrestre{
         return super.getNumRodas();
     }
     public void setAutonomia(int autonomia) {
-        if(autonomia<40 && autonomia>0){
-            System.out.println(autonomia);
-        }else{
-            System.out.println("valor invalido!");
-        }
+
         super.setAutonomia(autonomia);
     }
 
@@ -53,12 +44,7 @@ public class Motocicleta extends Terrestre{
     }
 
     public void setCombustivel(int combustivel) {
-        if(combustivel>9 && combustivel<0){
-            System.out.println(combustivel);
-        }
-        else{
-            System.out.println("combustivel Excedeu o limite!");
-        }
+
         this.combustivel = combustivel;
     }
 
@@ -75,7 +61,7 @@ public class Motocicleta extends Terrestre{
 
     @Override
     public void setVelocidadeMaxima(int velocidadeMaxima) {
-        //coloquei a velocidade maxima permitida em rodovias de pistas simples, ja que os motos variam de um para outro.
+
 
 
         super.setVelocidadeMaxima(velocidadeMaxima);
@@ -115,8 +101,24 @@ public class Motocicleta extends Terrestre{
         System.out.println("\n"+"Esse objeto e uma moto!");
     }
     public void dadosMoto(){
-        System.out.println("cor: "+getCor()+"\n"+"combustivel: "+getCombustivel()+"\n"+"km no contador: "+getKmRodadosContador()+"\n"+
-                "autonomia: "+getAutonomia()+"\n" +"numero de rodas: "+getNumRodas());
+        System.out.println("cor: "+getCor()+"\n"+"km no contador: "+getKmRodadosContador());
+        if(getAutonomia()<40 && getAutonomia()>0){
+            System.out.println("autonomia: "+getAutonomia());
+        }else{
+            System.out.println("valor invalido!");
+        }
+        if(getCombustivel() < 9 && getCombustivel()>0){
+            System.out.println("combustivel: "+getCombustivel());
+        }
+        else{
+            System.out.println("combustivel Excedeu o limite!");
+        }
+        if(getNumRodas()==2){
+            System.out.println("numero de rodas: "+getNumRodas());
+        }
+        else{
+            System.out.println("numero de rodas invalido!");
+        }
         if(validaPlaca(this.getPlaca())){
             System.out.println("placa: "+getPlaca());
 

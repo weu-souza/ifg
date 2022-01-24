@@ -14,24 +14,16 @@ public class Caminhao extends Terrestre{
     }
     @Override
     public void setNumRodas(int numRodas) {
-        if(numRodas==8 ){
-            System.out.println(numRodas);
-        }
-        else{
-            System.out.println("numero de rodas invalido!");
-        }
+
         super.setNumRodas(numRodas);
     }
     @Override
     public int getNumRodas() {
         return super.getNumRodas();
     }
+
     public void setAutonomia(int autonomia) {
-        if(autonomia<2 && autonomia>0){
-            System.out.println(autonomia);
-        }else{
-            System.out.println("valor invalido!");
-        }
+
         super.setAutonomia(autonomia);
     }
 
@@ -111,8 +103,18 @@ public class Caminhao extends Terrestre{
     public void exibirCaminhão(){
 
         System.out.println("cor: "+getCor()+"\n"
-                +"km no contador: "+getKmRodadosContador()+"\n"+
-                "autonomia: "+getAutonomia()+"\n"+"numero de rodas: "+getNumRodas());
+                +"km no contador: "+getKmRodadosContador()+"\n");
+        if(getAutonomia()>20 && getAutonomia()<0){
+            System.out.println("autonomia: "+getAutonomia());
+        }else{
+            System.out.println("valor invalido!");
+        }
+        if(getNumRodas()==8){
+            System.out.println("numero de rodas: "+getNumRodas());
+        }
+        else{
+            System.out.println("numero de rodas invalido!");
+        }
         if(validaPlaca(this.getPlaca())){
             System.out.println("placa: "+getPlaca());
 

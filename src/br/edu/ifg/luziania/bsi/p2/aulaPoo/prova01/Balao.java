@@ -14,11 +14,7 @@ public class Balao extends Aereo{
 
     @Override
     public void setAutonomia(int autonomia) {
-        if(autonomia<18 && autonomia>0){
-            System.out.println(autonomia);
-        }else{
-            System.out.println("valor invalido!");
-        }
+
         super.setAutonomia(autonomia);
     }
 
@@ -29,12 +25,7 @@ public class Balao extends Aereo{
 
     @Override
     public void setAlturaMaximaAlcancada(int alturaMaximaAlcancada) {
-        if(alturaMaximaAlcancada>10 && alturaMaximaAlcancada<0){
-            System.out.println(alturaMaximaAlcancada);
-        }
-        else{
-            System.out.println("altura maxima excedeu o limite!");
-        }
+
         super.setAlturaMaximaAlcancada(alturaMaximaAlcancada);
     }
 
@@ -50,12 +41,7 @@ public class Balao extends Aereo{
     }
 
     public void setCombustivel(int combustivel) {
-        if(combustivel>10 && combustivel<0){
-            System.out.println(combustivel);
-        }
-        else{
-            System.out.println("combustivel Excedeu o limite!");
-        }
+
         this.combustivel = combustivel;
     }
 
@@ -111,8 +97,19 @@ public class Balao extends Aereo{
         System.out.println("\n"+"esse objeto e um balão!");
     }
     public void exibirDadosBalao(){
-        System.out.println("autonomia: "+getAutonomia()+"\n"+"altura maxima: "+getAlturaMaximaAlcancada());
-        if(getCombustivel()<150 && getCombustivel()>0){
+
+        if(getAutonomia()<18 && getAutonomia()>0){
+            System.out.println("autonomia: "+getAutonomia());
+        }else{
+            System.out.println("valor invalido!");
+        }
+        if(getAlturaMaximaAlcancada()>10 && getAlturaMaximaAlcancada()<0){
+            System.out.println("altura maxima: "+getAlturaMaximaAlcancada());
+        }
+        else{
+            System.out.println("altura maxima excedeu o limite!");
+        }
+        if(getCombustivel()<10 && getCombustivel()>0){
             System.out.println("combustivel: "+getCombustivel()+"\n"+"consumo de combustivel: "+CalcularConsumoDeCombustivel()+"\n"+"tempo em km por hora: "+calcularTempoEmKmHora());
         }
         else{

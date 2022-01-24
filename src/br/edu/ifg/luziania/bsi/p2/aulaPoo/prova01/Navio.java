@@ -39,12 +39,7 @@ public class Navio extends Aquatico{
     }
 
     public void setCombustivel(int combustivel) {
-        if(combustivel>250000 && combustivel<0){
-            System.out.println(combustivel);
-        }
-        else{
-            System.out.println("combustivel Excedeu o limite!");
-        }
+
         this.combustivel = combustivel;
     }
 
@@ -102,7 +97,7 @@ public class Navio extends Aquatico{
     public void dadosNavio(){
         System.out.println("\n"+"km no contador: "+getKmRodadosContador()+"\n"+
                 "autonomia: "+getAutonomia()+"\n"+"ambiente: "+getAmbiente());
-        if(getCombustivel()<150 && getCombustivel()>0){
+        if(getCombustivel()<250000 && getCombustivel()>0){
             System.out.println("combustivel: "+getCombustivel()+"\n"+"consumo de combustivel: "+CalcularConsumoDeCombustivel()+"\n"+"tempo em km por hora: "+calcularTempoEmKmHora());
         }
         else{

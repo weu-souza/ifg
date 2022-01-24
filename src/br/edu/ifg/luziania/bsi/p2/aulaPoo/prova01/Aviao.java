@@ -14,11 +14,7 @@ public class Aviao extends Aereo{
     }
 
     public void setAutonomia(int autonomia) {
-        if(autonomia<200 && autonomia>0){
-            System.out.println(autonomia);
-        }else{
-            System.out.println("valor invalido!");
-        }
+
         super.setAutonomia(autonomia);
     }
 
@@ -29,12 +25,7 @@ public class Aviao extends Aereo{
 
     @Override
     public void setAlturaMaximaAlcancada(int alturaMaximaAlcancada) {
-        if(alturaMaximaAlcancada>6096 && alturaMaximaAlcancada<0){
-            System.out.println(alturaMaximaAlcancada);
-        }
-        else{
-            System.out.println("altura maxima excedeu o limite!");
-        }
+
         super.setAlturaMaximaAlcancada(alturaMaximaAlcancada);
     }
 
@@ -56,12 +47,7 @@ public class Aviao extends Aereo{
     }
 
     public void setCombustivel(int combustivel) {
-        if(combustivel>320000 && combustivel<0){
-            System.out.println(combustivel);
-        }
-        else{
-            System.out.println("combustivel Excedeu o limite!");
-        }
+
         this.combustivel = combustivel;
     }
 
@@ -119,9 +105,19 @@ public class Aviao extends Aereo{
         System.out.println("\n"+"esse objeto e um avião!");
     }
     public void exibirDadosAviao(){
-        System.out.println("km no contador: "+getKmRodadosContador()+
-                "\n"+ "autonomia: "+getAutonomia()+"\n"+"altura maxima: "+getAlturaMaximaAlcancada());
-        if(getCombustivel()<150 && getCombustivel()>0){
+        System.out.println("km no contador: "+getKmRodadosContador() );
+        if(getAutonomia()<200 && getAutonomia()>0){
+            System.out.println("autonomia: "+getAutonomia());
+        }else{
+            System.out.println("valor invalido!");
+        }
+        if(getAlturaMaximaAlcancada()>6096 && getAlturaMaximaAlcancada()<0){
+            System.out.println("altura maxima: "+getAlturaMaximaAlcancada());
+        }
+        else{
+            System.out.println("altura maxima excedeu o limite!");
+        }
+        if(getCombustivel()<320000 && getCombustivel()>0){
             System.out.println("combustivel: "+getCombustivel()+"\n"+"consumo de combustivel: "+CalcularConsumoDeCombustivel()+"\n"+"tempo em km por hora: "+calcularTempoEmKmHora());
         }
         else{

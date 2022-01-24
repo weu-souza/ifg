@@ -24,11 +24,7 @@ public class Barco extends Aquatico{
     }
 
     public void setAutonomia(int autonomia) {
-        if(autonomia<44 && autonomia>0){
-            System.out.println(autonomia);
-        }else{
-            System.out.println("valor invalido!");
-        }
+
         super.setAutonomia(autonomia);
     }
 
@@ -50,12 +46,7 @@ public class Barco extends Aquatico{
     }
 
     public void setCombustivel(int combustivel) {
-        if(combustivel>4 && combustivel<0){
-            System.out.println(combustivel);
-        }
-        else{
-            System.out.println("combustivel Excedeu o limite!");
-        }
+
         this.combustivel = combustivel;
     }
 
@@ -111,8 +102,13 @@ public class Barco extends Aquatico{
         System.out.println("\n"+"esse objeto e um barco!");
     }
     public void dadosBarco(){
-        System.out.println("km no contador: "+getKmRodadosContador()+"\n"+ "autonomia: "+getAutonomia()+"\n"+"ambiente: "+getAmbiente());
-        if(getCombustivel()<150 && getCombustivel()>0){
+        System.out.println("km no contador: "+getKmRodadosContador()+"\n"+ "ambiente: "+getAmbiente());
+        if(getAutonomia()<44 && getAutonomia()>0){
+            System.out.println("autonomia: "+getAutonomia());
+        }else{
+            System.out.println("valor invalido!");
+        }
+        if(getCombustivel()<40 && getCombustivel()>0){
             System.out.println("combustivel: "+getCombustivel()+"\n"+"consumo de combustivel: "+CalcularConsumoDeCombustivel()+"\n"+"tempo em km por hora: "+calcularTempoEmKmHora());
         }
         else{
