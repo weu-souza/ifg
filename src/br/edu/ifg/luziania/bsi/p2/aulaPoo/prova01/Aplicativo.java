@@ -12,7 +12,7 @@ public class Aplicativo {
     carro.exibirObjeto();
     carro.capacidadeDePessoasDoTransporte();
     carro.exibirVelocidadeMaxima();
-        carro.exibirCarro();
+    carro.exibirCarro();
     motocicleta.exibirObjeto();
     motocicleta.exibirVelocidadeMaxima();
     motocicleta.capacidadeDePessoasDoTransporte();
