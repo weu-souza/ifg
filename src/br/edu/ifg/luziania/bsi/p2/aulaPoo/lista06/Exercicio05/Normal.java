@@ -1,5 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio05;
 
+import javax.swing.*;
 import java.time.LocalDate;
 
 public class Normal extends Ingresso {
@@ -13,6 +14,6 @@ public class Normal extends Ingresso {
 
     public void ingressoNormal() {
 
-        System.out.println("\n"+"Ingresso Normal");
+        JOptionPane.showMessageDialog(null,"\n"+"Ingresso Normal");
     }
 }

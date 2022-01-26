@@ -1,5 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio05;
 
+import javax.swing.*;
 import java.time.LocalDate;
 
 public class CamaroteSuperior extends Vip {
@@ -35,13 +36,14 @@ public class CamaroteSuperior extends Vip {
     }
 
     public void dadosSuperior() {
-        System.out.println("\n"+"Dados Camarote superior"+
+        JOptionPane.showMessageDialog(null,"\n"+"Dados Camarote superior"+
                 "\n" + "Localização Do Ingresso Superior: " + getLocalizacaoSuperior());
         if (valorSuperior()>0){
-            System.out.println("Valor Do Ingresso Superior: " + valorSuperior());
+            JOptionPane.showMessageDialog(null,"Valor Do Ingresso Superior: " + valorSuperior());
         }
         else{
-            System.out.println("valor invalido");
+            JOptionPane.showMessageDialog(null,"valor invalido");
         }
+
     }
 }

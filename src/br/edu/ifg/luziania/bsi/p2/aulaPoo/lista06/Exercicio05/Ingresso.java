@@ -1,5 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio05;
 
+import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
 
@@ -53,14 +54,14 @@ public class Ingresso {
 
     public void imprimeValor() {
         if(this.valorIngresso < 0){
-            System.out.println("valor invalido");
+            JOptionPane.showMessageDialog(null,"valor invalido");
         }
         else{
-            System.out.println(getValorIngresso());
+            JOptionPane.showMessageDialog(null,"valor do ingresso normal: "+getValorIngresso());
         }
     }
 
     public void imprimeDadosDoEvento() {
-        System.out.println("Dados Do evento"+"\n"+"Nome do evento: " + getNomeEvento() + "\n" + "Data do Evento: " + getDataEvento());
+        JOptionPane.showMessageDialog(null,"Dados Do evento"+"\n"+"Nome do evento: " + getNomeEvento() + "\n" + "Data do Evento: " + getDataEvento());
     }
 }

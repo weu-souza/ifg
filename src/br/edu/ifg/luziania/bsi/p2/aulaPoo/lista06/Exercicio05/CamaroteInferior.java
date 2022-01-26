@@ -1,5 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio05;
 
+import javax.swing.*;
 import java.time.LocalDate;
 
 public class CamaroteInferior extends Vip {
@@ -21,12 +22,13 @@ public class CamaroteInferior extends Vip {
     }
 
     public void dadosInferior() {
-        System.out.println("\n"+"Dados camarote Inferior"+"\n"+"Localização do camarote inferior: " + getLocalizacaoInferior());
+        JOptionPane.showMessageDialog(null,"\n"+"Dados camarote Inferior"+"\n"+"Localização do camarote inferior: " + getLocalizacaoInferior());
         if(valorVip()>0){
-            System.out.println("preço do camarote inferior: " + valorVip());
+            JOptionPane.showMessageDialog(null,"preço do camarote inferior: " + valorVip());
         }
         else{
-            System.out.println("Valor Invalido");
+            JOptionPane.showMessageDialog(null,"Valor Invalido");
         }
+
     }
 }
