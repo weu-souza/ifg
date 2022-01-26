@@ -75,7 +75,7 @@ public class Barco extends Aquatico {
     }
 
     public void capacidadeDePessoasDoTransporte() {
-        if (getCapacidadeDePessoa() > 10 && getCapacidadeDePessoa() < 0) {
+        if (getCapacidadeDePessoa() > 40 && getCapacidadeDePessoa() < 0) {
             System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
         } else {
             System.out.println("capacidade de pessoas excedeu o numero minimo ou maximo de pessoas!");

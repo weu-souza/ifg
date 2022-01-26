@@ -120,9 +120,11 @@ public class Aviao extends Aereo {
             System.out.println("altura maxima excedeu o limite!");
         }
         if (getCombustivel() < 320000 && getCombustivel() > 0) {
-            System.out.println("combustivel: " + getCombustivel() + "\n" + "consumo de combustivel: " + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
+            System.out.println("combustivel: " + getCombustivel() + "\n" + "consumo de combustivel: " + CalcularConsumoDeCombustivel() +
+                    "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
         } else {
             System.out.println("combustivel Excedeu o limite!");
         }
     }
+
 }

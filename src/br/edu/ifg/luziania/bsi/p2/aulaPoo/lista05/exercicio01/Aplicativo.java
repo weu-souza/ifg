@@ -5,7 +5,7 @@ public class Aplicativo {
     public static void main(String[] args) {
 
 
-       Funcionario f = new Funcionario("weuller","souza",1200);
+       Funcionario f = new Funcionario("weuller","souza",1500);
     f.dadosFuncionario();
     }
 
