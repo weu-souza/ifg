@@ -1,12 +1,12 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
 
-public class Terrestre extends Transporte{
+public class Terrestre extends Transporte {
     private int numRodas;
     private String cor;
     private String placa;
 
     public Terrestre() {
-      super();
+        super();
     }
 
     public Terrestre(int capacidadeDePessoa, int velocidadeMaxima, int autonomia, int numRodas, String cor, String placa) {
@@ -40,18 +40,18 @@ public class Terrestre extends Transporte{
 
     }
 
-  public boolean validaPlaca(String placa){
+    public boolean validaPlaca(String placa) {
         boolean valido = true;
-      if(placa.length() != 7){
-          valido = false;
-      }
-      if(!placa.substring(0, 3).matches("[A-Z]*")){
-          valido = false;
-      }
-      if(!placa.substring(3).matches("[0-9]*")){
-          return false;
-      }
+        if (placa.length() != 7) {
+            valido = false;
+        }
+        if (!placa.substring(0, 3).matches("[A-Z]*")) {
+            valido = false;
+        }
+        if (!placa.substring(3).matches("[0-9]*")) {
+            return false;
+        }
         return valido;
-  }
+    }
 
 }

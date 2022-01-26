@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
 
-public class Aereo extends Transporte{
+public class Aereo extends Transporte {
     private int alturaMaximaAlcancada;
 
     public Aereo() {

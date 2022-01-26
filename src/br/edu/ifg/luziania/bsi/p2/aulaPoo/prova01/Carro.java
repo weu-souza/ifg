@@ -98,9 +98,9 @@ public class Carro extends Terrestre {
     }
 
     public void exibirCarro() {
-        System.out.println("cor: " + getCor() + "\n" + "autonomia: " + getAutonomia() + "\n"+ "km no contador: " + getKmRodadosContador());
+        System.out.println("cor: " + getCor() + "\n" + "autonomia: " + getAutonomia() + "\n" + "km no contador: " + getKmRodadosContador());
         if (getCombustivel() < 13 && getCombustivel() > 0) {
-            System.out.println("combustivel: " +getCombustivel());
+            System.out.println("combustivel: " + getCombustivel());
         } else {
             System.out.println("combustivel Excedeu o limite!");
         }

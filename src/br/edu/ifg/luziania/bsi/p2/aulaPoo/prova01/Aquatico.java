@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
 
-public class Aquatico extends Transporte{
+public class Aquatico extends Transporte {
     private String ambiente;
 
     public Aquatico() {
