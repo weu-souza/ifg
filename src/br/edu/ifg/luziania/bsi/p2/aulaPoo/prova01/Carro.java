@@ -1,68 +1,87 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
 
 public class Carro extends Terrestre {
-    private int combustivel;
-    private int kmRodadosContador;
+    private Double combustivel;
+    private Double kmRodadosContador;
 
-    public Carro() {
-        super();
-    }
 
-    public Carro(int capacidadeDePessoa, int velocidadeMaxima, int autonomia, int numRodas, String cor, String placa, int combustivel, int kmRodadosContador) {
+
+    public Carro(int capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, int numRodas, String cor, String placa, Double combustivel, Double kmRodadosContador) {
         super(capacidadeDePessoa, velocidadeMaxima, autonomia, numRodas, cor, placa);
-        this.combustivel = combustivel;
-        this.kmRodadosContador = kmRodadosContador;
+        setCombustivel(combustivel);
+        setKmRodadosContador(kmRodadosContador);
     }
 
     @Override
-    public void setNumRodas(int numRodas) {
+    public void setPlaca(String placa) {
+        super.setPlaca(placa);
+    }
+
+    @Override
+    public String getPlaca() {
+        return super.getPlaca();
+    }
+
+    @Override
+    public void setNumRodas(Integer numRodas) {
 
         super.setNumRodas(numRodas);
     }
 
     @Override
-    public int getNumRodas() {
+    public Integer getNumRodas() {
         return super.getNumRodas();
     }
 
 
-    public int getKmRodadosContador() {
+    public Double getKmRodadosContador() {
         return kmRodadosContador;
     }
 
-    public void setKmRodadosContador(int kmRodadosContador) {
-        this.kmRodadosContador = kmRodadosContador;
+    public void setKmRodadosContador(Double kmRodadosContador) {
+        if(kmRodadosContador==null||kmRodadosContador<0){
+            this.kmRodadosContador = 0.0;
+        }
+        else{
+            this.kmRodadosContador = kmRodadosContador;
+        }
+
     }
 
-    public int getCombustivel() {
+    public Double getCombustivel() {
         return combustivel;
     }
 
-    public void setCombustivel(int combustivel) {
+    public void setCombustivel(Double combustivel) {
+        if(combustivel==null||combustivel<0){
+            this.combustivel = 0.0;
+        }
+        else{
+            this.combustivel = combustivel;
+        }
 
-        this.combustivel = combustivel;
     }
 
     @Override
-    public void setCapacidadeDePessoa(int capacidadeDePessoa) {
+    public void setCapacidadeDePessoa(Integer capacidadeDePessoa) {
 
         super.setCapacidadeDePessoa(capacidadeDePessoa);
     }
 
     @Override
-    public int getCapacidadeDePessoa() {
+    public Integer getCapacidadeDePessoa() {
         return super.getCapacidadeDePessoa();
     }
 
     @Override
-    public void setVelocidadeMaxima(int velocidadeMaxima) {
+    public void setVelocidadeMaxima(Double velocidadeMaxima) {
 
 
         super.setVelocidadeMaxima(velocidadeMaxima);
     }
 
     @Override
-    public int getVelocidadeMaxima() {
+    public Double getVelocidadeMaxima() {
         return super.getVelocidadeMaxima();
     }
 
@@ -84,12 +103,12 @@ public class Carro extends Terrestre {
 
     }
 
-    public int CalcularConsumoDeCombustivel() {
+    public Double CalcularConsumoDeCombustivel() {
 
         return getKmRodadosContador() / getCombustivel();
     }
 
-    public int calcularTempoEmKmHora() {
+    public Double calcularTempoEmKmHora() {
         return getAutonomia() * getCombustivel();
     }
 
@@ -98,29 +117,13 @@ public class Carro extends Terrestre {
     }
 
     public void exibirCarro() {
-        System.out.println("cor: " + getCor() + "\n" + "autonomia: " + getAutonomia() + "\n" + "km no contador: " + getKmRodadosContador());
-        if (getCombustivel() < 13 && getCombustivel() > 0) {
-            System.out.println("combustivel: " + getCombustivel());
-        } else {
-            System.out.println("combustivel Excedeu o limite!");
-        }
-        if (getNumRodas() == 4) {
-            System.out.println("numero de rodas: " + getNumRodas());
-        } else {
-            System.out.println("numero de rodas invalido!");
-        }
-        if (validaPlaca(this.getPlaca())) {
-            System.out.println("placa: " + getPlaca());
+        System.out.println("cor: " + getCor() + "\n" + "autonomia: " + getAutonomia());
+        System.out.println("placa: " + getPlaca());
+        System.out.println("combustivel: " + getCombustivel());
+        System.out.println("numero de rodas: " + getNumRodas());
+        System.out.println("combustivel: " + getCombustivel() + "\n" + "consumo de combustivel: "
+                + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
 
-        } else {
-            System.out.println("placa invalida!");
-
-        }
-        if (getCombustivel() < 150 && getCombustivel() > 0) {
-            System.out.println("combustivel: " + getCombustivel() + "\n" + "consumo de combustivel: " + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
-        } else {
-            System.out.println("combustivel Excedeu o limite!");
-        }
     }
 
 }

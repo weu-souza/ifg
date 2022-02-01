@@ -1,40 +1,55 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
 
 public class Transporte {
-    private int capacidadeDePessoa;
-    private int velocidadeMaxima;
-    private int autonomia;
+    private Integer capacidadeDePessoa;
+    private Double velocidadeMaxima;
+    private Double autonomia;
 
     public Transporte() {
     }
 
-    public Transporte(int capacidadeDePessoa, int velocidadeMaxima, int autonomia) {
-        this.capacidadeDePessoa = capacidadeDePessoa;
-        this.velocidadeMaxima = velocidadeMaxima;
-        this.autonomia = autonomia;
+    public Transporte(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia) {
+        setCapacidadeDePessoa(capacidadeDePessoa);
+        setVelocidadeMaxima(velocidadeMaxima);
+        setAutonomia(autonomia);
     }
 
-    public int getCapacidadeDePessoa() {
+    public Integer getCapacidadeDePessoa() {
         return capacidadeDePessoa;
     }
 
-    public void setCapacidadeDePessoa(int capacidadeDePessoa) {
+    public void setCapacidadeDePessoa(Integer capacidadeDePessoa) {
+        if(capacidadeDePessoa==null || capacidadeDePessoa<0){
+            this.capacidadeDePessoa = 0;
+        }
+        else{
         this.capacidadeDePessoa = capacidadeDePessoa;
+        }
     }
 
-    public int getVelocidadeMaxima() {
+    public Double getVelocidadeMaxima() {
         return velocidadeMaxima;
     }
 
-    public void setVelocidadeMaxima(int velocidadeMaxima) {
+    public void setVelocidadeMaxima(Double velocidadeMaxima) {
+        if(velocidadeMaxima==null || velocidadeMaxima<0){
+            this.velocidadeMaxima = 0.0;
+        }
+        else{
         this.velocidadeMaxima = velocidadeMaxima;
+        }
     }
 
-    public int getAutonomia() {
+    public Double getAutonomia() {
         return autonomia;
     }
 
-    public void setAutonomia(int autonomia) {
+    public void setAutonomia(Double autonomia) {
+        if(autonomia==null || autonomia<0){
+            this.autonomia = 0.0;
+        }
+        else{
         this.autonomia = autonomia;
+        }
     }
 }

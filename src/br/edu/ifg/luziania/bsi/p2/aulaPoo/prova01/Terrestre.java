@@ -1,7 +1,7 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
 
 public class Terrestre extends Transporte {
-    private int numRodas;
+    private Integer numRodas;
     private String cor;
     private String placa;
 
@@ -9,19 +9,25 @@ public class Terrestre extends Transporte {
         super();
     }
 
-    public Terrestre(int capacidadeDePessoa, int velocidadeMaxima, int autonomia, int numRodas, String cor, String placa) {
+    public Terrestre(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, Integer numRodas, String cor, String placa) {
         super(capacidadeDePessoa, velocidadeMaxima, autonomia);
-        this.numRodas = numRodas;
+        setNumRodas(numRodas);
         this.cor = cor;
-        this.placa = placa;
+        setPlaca(placa);
     }
 
-    public int getNumRodas() {
+    public Integer getNumRodas() {
         return numRodas;
     }
 
-    public void setNumRodas(int numRodas) {
-        this.numRodas = numRodas;
+    public void setNumRodas(Integer numRodas) {
+        if(numRodas==null||numRodas<2){
+            this.numRodas = 0;
+        }
+        else{
+            this.numRodas = numRodas;
+        }
+
     }
 
     public String getCor() {
@@ -33,11 +39,25 @@ public class Terrestre extends Transporte {
     }
 
     public String getPlaca() {
-        return placa;
+
+        if(validaPlaca(placa)){
+            return this.placa.substring(0,3)+"-"+this.placa.substring(3);
+        }
+        else{
+            return "invalido!";
+        }
+
     }
 
     public void setPlaca(String placa) {
+        if(validaPlaca(placa)){
+            this.placa = placa;
+        }
+        else{
+            this.placa = "invalido!";
 
+
+        }
     }
 
     public boolean validaPlaca(String placa) {

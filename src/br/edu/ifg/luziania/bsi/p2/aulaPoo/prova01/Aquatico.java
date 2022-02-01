@@ -7,7 +7,7 @@ public class Aquatico extends Transporte {
         super();
     }
 
-    public Aquatico(int capacidadeDePessoa, int velocidadeMaxima, int autonomia, String ambiente) {
+    public Aquatico(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, String ambiente) {
         super(capacidadeDePessoa, velocidadeMaxima, autonomia);
         this.ambiente = ambiente;
     }

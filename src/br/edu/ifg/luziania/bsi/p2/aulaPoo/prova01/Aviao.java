@@ -1,106 +1,110 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
 
 public class Aviao extends Aereo {
-    private int kmRodadosContador;
-    private int combustivel;
+    private Double kmRodadosContador;
+    private Double combustivel;
 
-    public Aviao() {
-        super();
-    }
 
-    public Aviao(int capacidadeDePessoa, int velocidadeMaxima, int autonomia, int alturaMaximaAlcancada, int kmRodadosContador, int combustivel) {
+
+    public Aviao(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, Double alturaMaximaAlcancada, Double kmRodadosContador, Double combustivel) {
         super(capacidadeDePessoa, velocidadeMaxima, autonomia, alturaMaximaAlcancada);
-        this.kmRodadosContador = kmRodadosContador;
-        this.combustivel = combustivel;
+        setCombustivel(combustivel);
+        setKmRodadosContador(kmRodadosContador);
+
     }
 
-    public void setAutonomia(int autonomia) {
+    public void setAutonomia(Double autonomia) {
 
         super.setAutonomia(autonomia);
     }
 
     @Override
-    public int getAutonomia() {
+    public Double getAutonomia() {
         return super.getAutonomia();
     }
 
     @Override
-    public void setAlturaMaximaAlcancada(int alturaMaximaAlcancada) {
+    public void setAlturaMaximaAlcancada(Double alturaMaximaAlcancada) {
 
         super.setAlturaMaximaAlcancada(alturaMaximaAlcancada);
     }
 
     @Override
-    public int getAlturaMaximaAlcancada() {
+    public Double getAlturaMaximaAlcancada() {
         return super.getAlturaMaximaAlcancada();
     }
 
-    public int getKmRodadosContador() {
+    public Double getKmRodadosContador() {
         return kmRodadosContador;
     }
 
-    public void setKmRodadosContador(int kmRodadosContador) {
+    public void setKmRodadosContador(Double kmRodadosContador) {
+        if(kmRodadosContador==null || kmRodadosContador<0){
+            this.kmRodadosContador = 0.0;
+        }
+        else{
         this.kmRodadosContador = kmRodadosContador;
+        }
     }
 
-    public int getCombustivel() {
-        return combustivel;
+    public Double getCombustivel() {
+
+        return this.combustivel;
     }
 
-    public void setCombustivel(int combustivel) {
+    public void setCombustivel(Double combustivel) {
+        if(combustivel==null || combustivel<0){
+            this.combustivel = 0.0;
+        }
+        else{
+            this.combustivel = combustivel;
+        }
 
-        this.combustivel = combustivel;
+
     }
 
     @Override
-    public void setCapacidadeDePessoa(int capacidadeDePessoa) {
+    public void setCapacidadeDePessoa(Integer capacidadeDePessoa) {
 
         super.setCapacidadeDePessoa(capacidadeDePessoa);
     }
 
     @Override
-    public int getCapacidadeDePessoa() {
+    public Integer getCapacidadeDePessoa() {
         return super.getCapacidadeDePessoa();
     }
 
     @Override
-    public void setVelocidadeMaxima(int velocidadeMaxima) {
+    public void setVelocidadeMaxima(Double velocidadeMaxima) {
+
+            super.setVelocidadeMaxima(velocidadeMaxima);
 
 
-        super.setVelocidadeMaxima(velocidadeMaxima);
+
     }
 
     @Override
-    public int getVelocidadeMaxima() {
+    public Double getVelocidadeMaxima() {
         return super.getVelocidadeMaxima();
     }
 
     public void capacidadeDePessoasDoTransporte() {
-        if (getCapacidadeDePessoa() > 853 && getCapacidadeDePessoa() < 0) {
-            System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
-        } else {
-            System.out.println("capacidade de pessoas excedeu o numero minimo ou maximo de pessoas!");
-        }
-
+        System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
     }
 
     public void exibirVelocidadeMaxima() {
-        if (getVelocidadeMaxima() > 1061 && getVelocidadeMaxima() < 0) {
-            System.out.println("velocidade maxima: " + getVelocidadeMaxima());
-        } else {
-            System.out.println("a velocidade Exedeu o limite!");
-        }
+        System.out.println("velocidade maxima: " + getVelocidadeMaxima());
 
     }
 
-    public int CalcularConsumoDeCombustivel() {
+    public Double CalcularConsumoDeCombustivel() {
 
-        return getKmRodadosContador() / getCombustivel();
+        return this.kmRodadosContador / this.combustivel;
     }
 
-    public int calcularTempoEmKmHora() {
+    public Double calcularTempoEmKmHora() {
 
-        return getAutonomia() * getCombustivel();
+        return getAutonomia() * this.combustivel;
     }
 
     public void objeto() {
@@ -108,23 +112,13 @@ public class Aviao extends Aereo {
     }
 
     public void exibirDadosAviao() {
-        System.out.println("km no contador: " + getKmRodadosContador());
-        if (getAutonomia() < 200 && getAutonomia() > 0) {
-            System.out.println("autonomia: " + getAutonomia());
-        } else {
-            System.out.println("valor invalido!");
-        }
-        if (getAlturaMaximaAlcancada() > 6096 && getAlturaMaximaAlcancada() < 0) {
-            System.out.println("altura maxima: " + getAlturaMaximaAlcancada());
-        } else {
-            System.out.println("altura maxima excedeu o limite!");
-        }
-        if (getCombustivel() < 320000 && getCombustivel() > 0) {
-            System.out.println("combustivel: " + getCombustivel() + "\n" + "consumo de combustivel: " + CalcularConsumoDeCombustivel() +
-                    "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
-        } else {
-            System.out.println("combustivel Excedeu o limite!");
-        }
+        System.out.println("combustivel: "+this.combustivel);
+        System.out.println("autonomia: " + getAutonomia());
+        System.out.println("altura maxima: " + getAlturaMaximaAlcancada());
+        System.out.println("consumo de combustivel: "+CalcularConsumoDeCombustivel());
+        System.out.println("tempo em km por hora: " + calcularTempoEmKmHora());
+
     }
+
 
 }
