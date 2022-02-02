@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio02;
 
-public class Balao extends Aereo {
+public class Balao extends Aereo implements Dados {
     private Double combustivel;
 
     public Balao() {
@@ -41,36 +41,37 @@ public class Balao extends Aereo {
         return super.getCapacidadeDePessoa();
     }
 
-    @Override
+
+    public Double CalcularConsumoDeCombustivel(Double kmRodadosContador, Double combustivel) {
+
+        return kmRodadosContador / combustivel;
+    }
+
+    public Double calcularTempoEmKmHora(Double autonomia, Double combustivel) {
+        return autonomia*combustivel;
+    }
+
+    public void exibirVelocidadeMaxima() {
+        System.out.println("velocidade maxima" + getVelocidadeMaxima());
+    }
+
+    public void exibirObjeto() {
+        System.out.println("\n" + "esse objeto e um balão!");
+    }
+
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
 
     }
 
-    @Override
-    public void exibirVelocidadeMaxima() {
-        System.out.println("velocidade maxima" + getVelocidadeMaxima());
-    }
-
-    public Double CalcularConsumoDeCombustivel() {
-        return 2 * getCombustivel();
-    }
-
-    public Double calcularTempoEmKmHora() {
-        return getAutonomia() * getCombustivel();
-    }
-
-    @Override
-    public void exibirObjeto() {
-        System.out.println("\n" + "esse objeto e um balão!");
-    }
-
-    @Override
-    public void exibirDadosAereo() {
+    public void exibirDados() {
         System.out.println("autonomia: " + getAutonomia());
-        System.out.println("altura maxima: " + getAlturaMaximaAlcancada());
-        System.out.println("combustivel: " + getCombustivel() + "\n"
-                + "consumo de combustivel: " + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
+        System.out.println("consumo de combustivel: " + CalcularConsumoDeCombustivel(2.0,this.combustivel) + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora(getAutonomia(),this.combustivel));
 
+    }
+
+    @Override
+    public void dadosAereo() {
+        System.out.println("altura maxima: " + getAlturaMaximaAlcancada());
     }
 }

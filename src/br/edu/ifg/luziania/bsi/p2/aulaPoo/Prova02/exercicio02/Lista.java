@@ -14,77 +14,86 @@ public class Lista {
         Balao balao = new Balao(5, 5.0, 10.0, 5.0, 5.0);
         Barco barco = new Barco(40, 100.0, 20.0, AmbienteEnum.Rio, 50.0, 30.0);
         Navio navio = new Navio(30, 20.0, 4.0, AmbienteEnum.Mar, 50.0, 30.0);
-        Terrestre terrestre = new Terrestre();
-        Aquatico aquatico = new Aquatico();
-        Aereo aereo = new Aereo();
+
 
         System.out.println("escolha um veiculo: ");
-        System.out.println("1-Terrestre " + "\n" + "2-Aquatico" + "\n" + "3-Aereo");
+
         for (int i = 0; i < 3; i++) {
+            System.out.println("1-Terrestre " + "\n" + "2-Aquatico" + "\n" + "3-Aereo");
             veiculo = listar.nextInt();
             if (veiculo == 1) {
-                terrestre.exibirObjeto();
-                System.out.println("1-carro\n" + "2-moto\n" + "3-caminhão");
+                System.out.println("esse veiculo é terrestre! ");
+
                 for (int j = 0; j < 3; j++) {
+                    System.out.println("1-carro\n" + "2-moto\n" + "3-caminhão");
                     System.out.println("escolha: ");
                     escolher = listar.nextInt();
                     if (escolher == 1) {
                         carro.exibirObjeto();
                         carro.capacidadeDePessoasDoTransporte();
                         carro.exibirVelocidadeMaxima();
-                        carro.dadosTerrestres();
+                        carro.exibirDados();
+                        carro.DadosTerrestres();
                     } else if (escolher == 2) {
                         motocicleta.exibirObjeto();
                         motocicleta.exibirVelocidadeMaxima();
                         motocicleta.capacidadeDePessoasDoTransporte();
-                        motocicleta.dadosTerrestres();
+                        motocicleta.exibirDados();
+                        motocicleta.DadosTerrestres();
                     } else if (escolher == 3) {
                         caminhao.exibirObjeto();
                         caminhao.exibirVelocidadeMaxima();
                         caminhao.capacidadeDePessoasDoTransporte();
-                        caminhao.dadosTerrestres();
+                        caminhao.exibirDados();
+                        caminhao.DadosTerrestres();
                     } else {
                         System.out.println("não existe esse veiculo terrestre!");
                         break;
                     }
                 }
             } else if (veiculo == 2) {
-                aquatico.exibirObjeto();
-                System.out.println("1-barco\n" + "2-navio");
+                System.out.println("esse veiculo é aquatico!");
+
                 for (int j = 0; j < 2; j++) {
+                    System.out.println("1-barco\n" + "2-navio");
                     System.out.println("escolha: ");
                     escolher = listar.nextInt();
                     if (escolher == 1) {
                         barco.exibirObjeto();
                         barco.exibirVelocidadeMaxima();
                         barco.capacidadeDePessoasDoTransporte();
-                        barco.exibirAquatico();
+                        barco.exibirDados();
+                        barco.dadosAquatico();
                     } else if (escolher == 2) {
                         navio.exibirObjeto();
                         navio.exibirVelocidadeMaxima();
                         navio.capacidadeDePessoasDoTransporte();
-                        navio.exibirAquatico();
+                        navio.exibirDados();
+                        navio.dadosAquatico();
                     } else {
                         System.out.println("não existe esse veiculo aquatico!");
                         break;
                     }
                 }
             } else if (veiculo == 3) {
-                aereo.exibirObjeto();
-                System.out.println("1-aviao\n" + "2-balão");
+                System.out.println("esse veiculo é aereo");
+
                 for (int j = 0; j < 2; j++) {
+                    System.out.println("1-aviao\n" + "2-balão");
                     escolher = listar.nextInt();
                     System.out.println("escolha: ");
                     if (escolher == 1) {
                         aviao.exibirObjeto();
                         aviao.exibirVelocidadeMaxima();
                         aviao.capacidadeDePessoasDoTransporte();
-                        aviao.exibirDadosAereo();
+                        aviao.exibirDados();
+                        aviao.dadosAereo();
                     } else if (escolher == 2) {
                         balao.exibirObjeto();
                         balao.capacidadeDePessoasDoTransporte();
                         balao.exibirVelocidadeMaxima();
-                        balao.exibirDadosAereo();
+                        balao.exibirDados();
+                        balao.dadosAereo();
                     } else {
                         System.out.println("não existe esse veiculo aereo!");
                         break;

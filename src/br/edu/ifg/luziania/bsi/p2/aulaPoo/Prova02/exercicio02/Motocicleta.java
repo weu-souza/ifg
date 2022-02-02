@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio02;
 
-public class Motocicleta extends Terrestre {
+public class Motocicleta extends Terrestre implements Dados {
     private Double combustivel;
     private Double kmRodadosContador;
 
@@ -84,41 +84,42 @@ public class Motocicleta extends Terrestre {
     }
 
 
-    public Double CalcularConsumoDeCombustivel() {
+    public Double CalcularConsumoDeCombustivel(Double kmRodadosContador, Double combustivel) {
 
-        return getKmRodadosContador() / getCombustivel();
+        return kmRodadosContador / combustivel;
     }
 
-    public Double calcularTempoEmKmHora() {
-        return getAutonomia() * getCombustivel();
+    public Double calcularTempoEmKmHora(Double autonomia, Double combustivel) {
+        return autonomia*combustivel;
     }
 
-    @Override
+
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
 
     }
 
-    @Override
+
     public void exibirVelocidadeMaxima() {
         System.out.println("velocidade maxima: " + getVelocidadeMaxima());
 
     }
 
-    @Override
+
     public void exibirObjeto() {
         System.out.println("\n" + "Esse objeto e uma moto!");
     }
 
-    @Override
-    public void dadosTerrestres() {
-        System.out.println("cor: " + getCor());
-        System.out.println("autonomia: " + getAutonomia());
-        System.out.println("combustivel: " + getCombustivel());
-        System.out.println("numero de rodas: " + getNumRodas());
-        System.out.println("placa: " + getPlaca());
-        System.out.println("combustivel: " + getCombustivel() + "\n" +
-                "consumo de combustivel: " + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
 
+    public void exibirDados() {
+        System.out.println("autonomia: " + getAutonomia());
+        System.out.println("combustivel: " + this.combustivel);
+        System.out.println("consumo de combustivel: " + CalcularConsumoDeCombustivel(this.kmRodadosContador,this.combustivel) + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora(getAutonomia(),this.combustivel));
+    }
+@Override
+    public void DadosTerrestres() {
+        System.out.println("cor: " + getCor());
+        System.out.println("placa: " + getPlaca());
+        System.out.println("numero de rodas: " + getNumRodas());
     }
 }

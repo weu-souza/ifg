@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio02;
 
-public class Terrestre extends Transporte {
+public abstract class Terrestre extends Transporte {
     private Integer numRodas;
     private CorEnum cor;
     private String placa;
@@ -73,19 +73,8 @@ public class Terrestre extends Transporte {
         }
         return valido;
     }
-    @Override
-    public void capacidadeDePessoasDoTransporte() {
-        System.out.println("");
-    }
-    @Override
-    public void exibirVelocidadeMaxima() {
-        System.out.println("");
-    }
+ public void DadosTerrestres(){
+     System.out.println(this.numRodas+this.placa+this.cor);
+ }
 
-    public void exibirObjeto(){
-        System.out.println("esse veiculo e terrestre");
-    }
-    public void dadosTerrestres(){
-        System.out.println("os dados não foram definidos");
-    }
 }

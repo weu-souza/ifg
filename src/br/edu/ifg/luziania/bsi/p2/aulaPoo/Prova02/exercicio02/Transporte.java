@@ -50,11 +50,6 @@ public abstract class Transporte {
         }
     }
 
-    public abstract void capacidadeDePessoasDoTransporte();
 
-    public abstract void exibirVelocidadeMaxima();
 
-    public abstract void exibirObjeto();
-
-    ;
 }

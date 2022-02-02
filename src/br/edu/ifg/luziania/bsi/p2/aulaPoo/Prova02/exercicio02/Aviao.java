@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio02;
 
-public class Aviao extends Aereo {
+public class Aviao extends Aereo implements Dados {
     private Double kmRodadosContador;
     private Double combustivel;
 
@@ -41,40 +41,40 @@ public class Aviao extends Aereo {
     }
 
 
-    public Double CalcularConsumoDeCombustivel() {
+    public Double CalcularConsumoDeCombustivel(Double kmRodadosContador, Double combustivel) {
 
-        return this.kmRodadosContador / this.combustivel;
+        return kmRodadosContador / combustivel;
     }
 
-    public Double calcularTempoEmKmHora() {
-
-        return getAutonomia() * this.combustivel;
+    public Double calcularTempoEmKmHora(Double autonomia, Double combustivel) {
+        return autonomia*combustivel;
     }
-    @Override
+
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
     }
-    @Override
+
     public void exibirVelocidadeMaxima() {
         System.out.println("velocidade maxima: " + getVelocidadeMaxima());
 
     }
 
 
-    @Override
+
     public void exibirObjeto() {
         System.out.println("\n" + "esse objeto e um avião!");
     }
 
-    @Override
-    public void exibirDadosAereo() {
+
+    public void exibirDados() {
         System.out.println("combustivel: " + this.combustivel);
-        System.out.println("autonomia: " + getAutonomia());
-        System.out.println("altura maxima: " + getAlturaMaximaAlcancada());
-        System.out.println("consumo de combustivel: " + CalcularConsumoDeCombustivel());
-        System.out.println("tempo em km por hora: " + calcularTempoEmKmHora());
+        System.out.println("autonomia: " + this.getAutonomia());
+        System.out.println("consumo de combustivel: " + CalcularConsumoDeCombustivel(this.kmRodadosContador,this.combustivel) + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora(getAutonomia(),this.combustivel));
 
     }
 
-
+    @Override
+    public void dadosAereo() {
+        System.out.println("altura maxima: " + getAlturaMaximaAlcancada());
+    }
 }

@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio02;
 
-public class Aquatico extends Transporte {
+public abstract class Aquatico extends Transporte  {
     private AmbienteEnum ambiente;
 
     public Aquatico() {
@@ -9,7 +9,7 @@ public class Aquatico extends Transporte {
 
     public Aquatico(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, AmbienteEnum ambiente) {
         super(capacidadeDePessoa, velocidadeMaxima, autonomia);
-       setAmbiente(ambiente);
+        setAmbiente(ambiente);
     }
 
     public AmbienteEnum getAmbiente() {
@@ -20,20 +20,9 @@ public class Aquatico extends Transporte {
 
         this.ambiente = ambiente;
     }
+public void dadosAquatico(){
+    System.out.println(this.ambiente);
+}
 
-    public void exibirObjeto(){
-        System.out.println("Esse veiculo é aquatico!");
-    }
-    public void exibirAquatico(){
-        System.out.println("não definido!");
-    }
-    @Override
-    public void capacidadeDePessoasDoTransporte() {
-        System.out.println("");
-    }
-    @Override
-    public void exibirVelocidadeMaxima() {
-        System.out.println("");
-    }
 
 }

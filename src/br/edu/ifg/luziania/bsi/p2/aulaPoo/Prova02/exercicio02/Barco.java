@@ -1,6 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio02;
 
-public class Barco extends Aquatico {
+public class Barco extends Aquatico implements Dados {
     private Double combustivel;
     private Double kmRodadosContador;
 
@@ -70,33 +70,36 @@ public class Barco extends Aquatico {
     }
 
 
-    public Double CalcularConsumoDeCombustivel() {
-        return getKmRodadosContador() / getCombustivel();
+    public Double CalcularConsumoDeCombustivel(Double kmRodadosContador, Double combustivel) {
+
+        return kmRodadosContador / combustivel;
     }
 
-    public Double calcularTempoEmKmHora() {
-        return getAutonomia() * getCombustivel();
+    public Double calcularTempoEmKmHora(Double autonomia, Double combustivel) {
+        return autonomia*combustivel;
     }
-    @Override
+
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
 
     }
-    @Override
+
     public void exibirVelocidadeMaxima() {
         System.out.println("velocidade maxima: " + getVelocidadeMaxima());
     }
-@Override
+
     public void exibirObjeto() {
         System.out.println("\n" + "esse objeto e um barco!");
     }
-@Override
-    public void exibirAquatico() {
-        System.out.println("km no contador: " + getKmRodadosContador() + "\n" + "ambiente: " + getAmbiente());
-        System.out.println("autonomia: " + getAutonomia());
-        System.out.println("combustivel: " + getCombustivel() + "\n"
-                + "consumo de combustivel: " + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
 
+    public void exibirDados() {
+        System.out.println("autonomia: " + getAutonomia());
+        System.out.println("consumo de combustivel: " + CalcularConsumoDeCombustivel(this.kmRodadosContador,this.combustivel) + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora(getAutonomia(),this.combustivel));
+
+    }
+    @Override
+    public void dadosAquatico() {
+        System.out.println("ambiente: " + getAmbiente());
     }
 
 }
