@@ -83,34 +83,34 @@ public class Motocicleta extends Terrestre implements Dados {
         return super.getVelocidadeMaxima();
     }
 
-
+    @Override
     public Double CalcularConsumoDeCombustivel(Double kmRodadosContador, Double combustivel) {
 
         return kmRodadosContador / combustivel;
     }
-
+    @Override
     public Double calcularTempoEmKmHora(Double autonomia, Double combustivel) {
         return autonomia*combustivel;
     }
 
-
+    @Override
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
 
     }
 
-
+    @Override
     public void exibirVelocidadeMaxima() {
         System.out.println("velocidade maxima: " + getVelocidadeMaxima());
 
     }
 
-
+    @Override
     public void exibirObjeto() {
         System.out.println("\n" + "Esse objeto e uma moto!");
     }
 
-
+    @Override
     public void exibirDados() {
         System.out.println("autonomia: " + getAutonomia());
         System.out.println("combustivel: " + this.combustivel);

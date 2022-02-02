@@ -1,17 +1,25 @@
-package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
+package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio03.prova01;
 
-public class Caminhao extends Terrestre {
+public class Carro extends Terrestre {
     private Double combustivel;
     private Double kmRodadosContador;
 
-    public Caminhao() {
-        super();
+
+
+    public Carro(int capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, int numRodas, String cor, String placa, Double combustivel, Double kmRodadosContador) {
+        super(capacidadeDePessoa, velocidadeMaxima, autonomia, numRodas, cor, placa);
+        setCombustivel(combustivel);
+        setKmRodadosContador(kmRodadosContador);
     }
 
-    public Caminhao(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, Integer numRodas, String cor, String placa, Double combustivel, Double kmRodadosContador) {
-        super(capacidadeDePessoa, velocidadeMaxima, autonomia, numRodas, cor, placa);
-       setCombustivel(combustivel);
-       setKmRodadosContador(kmRodadosContador);
+    @Override
+    public void setPlaca(String placa) {
+        super.setPlaca(placa);
+    }
+
+    @Override
+    public String getPlaca() {
+        return super.getPlaca();
     }
 
     @Override
@@ -25,15 +33,6 @@ public class Caminhao extends Terrestre {
         return super.getNumRodas();
     }
 
-    public void setAutonomia(Double autonomia) {
-
-        super.setAutonomia(autonomia);
-    }
-
-    @Override
-    public Double getAutonomia() {
-        return super.getAutonomia();
-    }
 
     public Double getKmRodadosContador() {
         return kmRodadosContador;
@@ -46,6 +45,7 @@ public class Caminhao extends Terrestre {
         else{
             this.kmRodadosContador = kmRodadosContador;
         }
+
     }
 
     public Double getCombustivel() {
@@ -53,13 +53,13 @@ public class Caminhao extends Terrestre {
     }
 
     public void setCombustivel(Double combustivel) {
-
         if(combustivel==null||combustivel<0){
             this.combustivel = 0.0;
         }
         else{
             this.combustivel = combustivel;
         }
+
     }
 
     @Override
@@ -76,6 +76,7 @@ public class Caminhao extends Terrestre {
     @Override
     public void setVelocidadeMaxima(Double velocidadeMaxima) {
 
+
         super.setVelocidadeMaxima(velocidadeMaxima);
     }
 
@@ -85,18 +86,25 @@ public class Caminhao extends Terrestre {
     }
 
     public void capacidadeDePessoasDoTransporte() {
-        System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
+        if (getCapacidadeDePessoa() > 4 && getCapacidadeDePessoa() < 0) {
+            System.out.println("Capacidade de pessoas: " + getCapacidadeDePessoa());
+        } else {
+            System.out.println("capacidade de pessoas excedeu o numero minimo ou maximo de pessoas!");
+        }
 
     }
 
     public void exibirVelocidadeMaxima() {
-
-        System.out.println("velocidade maxima: " + getVelocidadeMaxima());
-
+        if (getVelocidadeMaxima() > 100 && getVelocidadeMaxima() < 0) {
+            System.out.println("Velocidade maxima: " + getVelocidadeMaxima());
+        } else {
+            System.out.println("a velocidade Exedeu o limite!");
+        }
 
     }
 
     public Double CalcularConsumoDeCombustivel() {
+
         return getKmRodadosContador() / getCombustivel();
     }
 
@@ -105,15 +113,14 @@ public class Caminhao extends Terrestre {
     }
 
     public void exibirObjeto() {
-        System.out.println("\n" + "Esse objeto e um caminhão!");
+        System.out.println("esse objeto e um carro!");
     }
 
-    public void exibirCaminhão() {
-
-        System.out.println("cor: " + getCor());
-        System.out.println("autonomia: " + getAutonomia());
-        System.out.println("numero de rodas: " + getNumRodas());
+    public void exibirCarro() {
+        System.out.println("cor: " + getCor() + "\n" + "autonomia: " + getAutonomia());
         System.out.println("placa: " + getPlaca());
+        System.out.println("combustivel: " + getCombustivel());
+        System.out.println("numero de rodas: " + getNumRodas());
         System.out.println("combustivel: " + getCombustivel() + "\n" + "consumo de combustivel: "
                 + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
 

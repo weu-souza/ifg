@@ -40,32 +40,32 @@ public class Aviao extends Aereo implements Dados {
 
     }
 
-
+    @Override
     public Double CalcularConsumoDeCombustivel(Double kmRodadosContador, Double combustivel) {
 
         return kmRodadosContador / combustivel;
     }
-
+@Override
     public Double calcularTempoEmKmHora(Double autonomia, Double combustivel) {
         return autonomia*combustivel;
     }
-
+@Override
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
     }
-
+@Override
     public void exibirVelocidadeMaxima() {
         System.out.println("velocidade maxima: " + getVelocidadeMaxima());
 
     }
 
 
-
+@Override
     public void exibirObjeto() {
         System.out.println("\n" + "esse objeto e um avião!");
     }
 
-
+@Override
     public void exibirDados() {
         System.out.println("combustivel: " + this.combustivel);
         System.out.println("autonomia: " + this.getAutonomia());

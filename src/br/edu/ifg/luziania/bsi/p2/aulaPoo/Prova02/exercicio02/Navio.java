@@ -38,29 +38,29 @@ public class Navio extends Aquatico implements Dados{
 
     }
 
-
+    @Override
     public Double CalcularConsumoDeCombustivel(Double kmRodadosContador, Double combustivel) {
         return kmRodadosContador/combustivel;
     }
-
+    @Override
     public Double calcularTempoEmKmHora(Double autonomia, Double combustivel) {
         return autonomia * combustivel;
     }
-
+    @Override
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
     }
-
+    @Override
     public void exibirVelocidadeMaxima() {
         System.out.println("velocidade maxima: " + getVelocidadeMaxima());
     }
 
-
+    @Override
     public void exibirObjeto() {
         System.out.println("\n" + "esse objeto e um navio!");
     }
 
-
+    @Override
     public void exibirDados() {
         System.out.println("consumo de combustivel: " + CalcularConsumoDeCombustivel(this.kmRodadosContador,this.combustivel) + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora(getAutonomia(),this.combustivel));
     }

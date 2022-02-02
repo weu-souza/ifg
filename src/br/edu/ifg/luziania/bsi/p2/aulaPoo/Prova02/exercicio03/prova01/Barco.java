@@ -1,4 +1,4 @@
-package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
+package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio03.prova01;
 
 public class Barco extends Aquatico {
     private Double combustivel;

@@ -1,28 +1,15 @@
-package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
+package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio03.prova01;
 
-public class Motocicleta extends Terrestre {
+public class Navio extends Aquatico {
     private Double combustivel;
     private Double kmRodadosContador;
 
-    public Motocicleta() {
-        super();
-    }
 
-    public Motocicleta(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, Integer numRodas, String cor, String placa, Double combustivel, Double kmRodadosContador) {
-        super(capacidadeDePessoa, velocidadeMaxima, autonomia, numRodas, cor, placa);
+
+    public Navio(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, String ambiente, Double combustivel, Double kmRodadosContador) {
+        super(capacidadeDePessoa, velocidadeMaxima, autonomia, ambiente);
         setCombustivel(combustivel);
         setKmRodadosContador(kmRodadosContador);
-    }
-
-    @Override
-    public void setNumRodas(Integer numRodas) {
-
-        super.setNumRodas(numRodas);
-    }
-
-    @Override
-    public Integer getNumRodas() {
-        return super.getNumRodas();
     }
 
     public void setAutonomia(Double autonomia) {
@@ -40,13 +27,13 @@ public class Motocicleta extends Terrestre {
     }
 
     public void setKmRodadosContador(Double kmRodadosContador) {
+
         if(kmRodadosContador==null||kmRodadosContador<0){
             this.kmRodadosContador = 0.0;
         }
         else{
             this.kmRodadosContador = kmRodadosContador;
         }
-
     }
 
     public Double getCombustivel() {
@@ -88,16 +75,13 @@ public class Motocicleta extends Terrestre {
 
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
-
     }
 
     public void exibirVelocidadeMaxima() {
         System.out.println("velocidade maxima: " + getVelocidadeMaxima());
-
     }
 
     public Double CalcularConsumoDeCombustivel() {
-
         return getKmRodadosContador() / getCombustivel();
     }
 
@@ -105,18 +89,14 @@ public class Motocicleta extends Terrestre {
         return getAutonomia() * getCombustivel();
     }
 
-    public void exibirObjeto() {
-        System.out.println("\n" + "Esse objeto e uma moto!");
+    public void objeto() {
+        System.out.println("\n" + "esse objeto e um navio!");
     }
 
-    public void dadosMoto() {
-        System.out.println("cor: " + getCor() );
-        System.out.println("autonomia: " + getAutonomia());
-        System.out.println("combustivel: " + getCombustivel());
-        System.out.println("numero de rodas: " + getNumRodas());
-        System.out.println("placa: " + getPlaca());
-        System.out.println("combustivel: " + getCombustivel() + "\n" +
-                "consumo de combustivel: " + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
+    public void dadosNavio() {
+        System.out.println("autonomia: " + getAutonomia() + "\n" + "ambiente: " + getAmbiente());
+        System.out.println("combustivel: " +getCombustivel() + "\n" + "consumo de combustivel: " +
+                CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
 
     }
 }

@@ -1,17 +1,18 @@
-package br.edu.ifg.luziania.bsi.p2.aulaPoo.prova01;
+package br.edu.ifg.luziania.bsi.p2.aulaPoo.Prova02.exercicio03.prova01;
 
-public class Navio extends Aquatico {
+public class Balao extends Aereo {
     private Double combustivel;
-    private Double kmRodadosContador;
 
-
-
-    public Navio(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, String ambiente, Double combustivel, Double kmRodadosContador) {
-        super(capacidadeDePessoa, velocidadeMaxima, autonomia, ambiente);
-        setCombustivel(combustivel);
-        setKmRodadosContador(kmRodadosContador);
+    public Balao() {
+        super();
     }
 
+    public Balao(Integer capacidadeDePessoa, Double velocidadeMaxima, Double autonomia, Double alturaMaximaAlcancada, Double combustivel) {
+        super(capacidadeDePessoa, velocidadeMaxima, autonomia, alturaMaximaAlcancada);
+        setCombustivel(combustivel);
+    }
+
+    @Override
     public void setAutonomia(Double autonomia) {
 
         super.setAutonomia(autonomia);
@@ -22,32 +23,30 @@ public class Navio extends Aquatico {
         return super.getAutonomia();
     }
 
-    public Double getKmRodadosContador() {
-        return kmRodadosContador;
+    @Override
+    public void setAlturaMaximaAlcancada(Double alturaMaximaAlcancada) {
+
+        super.setAlturaMaximaAlcancada(alturaMaximaAlcancada);
     }
 
-    public void setKmRodadosContador(Double kmRodadosContador) {
-
-        if(kmRodadosContador==null||kmRodadosContador<0){
-            this.kmRodadosContador = 0.0;
-        }
-        else{
-            this.kmRodadosContador = kmRodadosContador;
-        }
+    @Override
+    public Double getAlturaMaximaAlcancada() {
+        return super.getAlturaMaximaAlcancada();
     }
+
 
     public Double getCombustivel() {
         return combustivel;
     }
 
     public void setCombustivel(Double combustivel) {
-        if(combustivel==null||combustivel<0){
+
+        if(combustivel==null || combustivel<0){
             this.combustivel = 0.0;
         }
         else{
             this.combustivel = combustivel;
         }
-
     }
 
     @Override
@@ -75,14 +74,15 @@ public class Navio extends Aquatico {
 
     public void capacidadeDePessoasDoTransporte() {
         System.out.println("capacidade de pessoas: " + getCapacidadeDePessoa());
+
     }
 
     public void exibirVelocidadeMaxima() {
-        System.out.println("velocidade maxima: " + getVelocidadeMaxima());
+        System.out.println("velocidade maxima" + getVelocidadeMaxima());
     }
 
     public Double CalcularConsumoDeCombustivel() {
-        return getKmRodadosContador() / getCombustivel();
+        return 2 * getCombustivel();
     }
 
     public Double calcularTempoEmKmHora() {
@@ -90,13 +90,14 @@ public class Navio extends Aquatico {
     }
 
     public void objeto() {
-        System.out.println("\n" + "esse objeto e um navio!");
+        System.out.println("\n" + "esse objeto e um balão!");
     }
 
-    public void dadosNavio() {
-        System.out.println("autonomia: " + getAutonomia() + "\n" + "ambiente: " + getAmbiente());
-        System.out.println("combustivel: " +getCombustivel() + "\n" + "consumo de combustivel: " +
-                CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
+    public void exibirDadosBalao() {
+        System.out.println("autonomia: " + getAutonomia());
+        System.out.println("altura maxima: " + getAlturaMaximaAlcancada());
+        System.out.println("combustivel: " + getCombustivel() + "\n"
+                + "consumo de combustivel: " + CalcularConsumoDeCombustivel() + "\n" + "tempo em km por hora: " + calcularTempoEmKmHora());
 
     }
 }
