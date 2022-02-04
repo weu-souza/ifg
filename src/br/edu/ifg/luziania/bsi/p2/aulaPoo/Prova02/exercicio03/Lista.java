@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Lista {
     public void exibirLista(){
         Scanner scanner = new Scanner(System.in);
-        Comissionado comissionado = new Comissionado("",CargoEnum.Comissionado,5.0,1200.0);
-        Horista horista = new Horista("",CargoEnum.Horista,20.0,40.0);
-        Assalariado assalariado = new Assalariado("",CargoEnum.Assalariado,2000.0);
+        Comissionado comissionado = new Comissionado("",CargoEnum.Programador,5.0,1200.0);
+        Horista horista = new Horista("",CargoEnum.Programador,20.0,40.0);
+        Assalariado assalariado = new Assalariado("",CargoEnum.Diretor,2000.0);
         System.out.println("digite qual a funcão: ");
 
 
