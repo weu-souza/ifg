@@ -10,7 +10,7 @@ public class Painel  extends JFrame{
     private JButton vipButton;
     private JButton dadosDoEventoButton;
     private JPanel painel;
-    Ingresso i = new Ingresso(LocalDate.of(2021,05,23),"show de sertanejo",50);
+    Ingresso i = new Ingresso(LocalDate.of(2021,05,23),"show de sertanejo",50.5);
     Normal n = new Normal(i.getDataEvento(),i.getNomeEvento(),i.getValorIngresso());
 
     public Painel(){

@@ -12,15 +12,10 @@ public class Funcionario {
     public Funcionario(String nome, String sobrenome, double salario) {
         this.primeiroNome = nome;
         this.sobrenome = sobrenome;
-        if (salario > 0) {
-            this.salarioMensal = salario;
-        } else
-            this.salarioMensal = 0;
+        setSalarioMensal(salario);
     }
 
-    public Funcionario() {
 
-    }
 
     public String getPrimeiroNome() {
 
@@ -53,36 +48,40 @@ public class Funcionario {
 
 
     public double salarioAnual() {
+        if (salarioMensal<0){
+            return 0;
+        }
+        else
         return this.salarioMensal * 12;
     }
 
     public double aumento() {
-        double aumento = this.salarioMensal * 0.1;
-        return aumento * 12;
+        if (salarioMensal<0){
+            return 0;
+        }
+        else{
+            double aumento = this.salarioMensal * 0.1;
+            return aumento * 12;
+        }
+
     }
 
     public double salarioAnualComAumento() {
-
+        if (salarioMensal<0){
+            return 0;
+        }
+        else
         return this.salarioAnual() + aumento();
     }
 
     public void dadosFuncionario() {
-        System.out.println("\n" + "o Funcionario " + getPrimeiroNome() + " " + getSobrenome());
-        if(getSalarioMensal()>0){
-            System.out.println("\n" + "salario mensal de: " + getSalarioMensal());
-        }
-         if(salarioAnual()>0){
-            System.out.println("recebe o salario anual de: " +  salarioAnual());
-        }
-         if(aumento()>0){
-            System.out.println("com aumento de: " + aumento());
-        }
-         if(salarioAnualComAumento()>0){
-            System.out.println("tem o salario final de: " + salarioAnualComAumento());
-        }
-         else{
-             System.out.println("salario invalido");
-         }
+        System.out.println( "o Funcionario " + getPrimeiroNome() + " " + getSobrenome());
+        System.out.println("\n" + "salario mensal de: " + getSalarioMensal());
+        System.out.println("recebe o salario anual de: " +  salarioAnual());
+        System.out.println("com aumento de: " + aumento());
+        System.out.println("tem o salario final de: " + salarioAnualComAumento());
+
+
     }
 
 }

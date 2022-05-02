@@ -3,10 +3,6 @@ package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio02;
 public class Gato extends Felino{
     private String raca;
 
-    public Gato() {
-
-    }
-
     public Gato(double peso, Integer idade, String alimento, double velocidade, String raca) {
         super(peso, idade, alimento, velocidade);
         this.raca = raca;

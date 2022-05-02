@@ -6,9 +6,6 @@ public class Animal {
     private String alimento;
     private double velocidade;
 
-    public Animal() {
-    }
-
     public Animal(double peso, Integer idade, String alimento, double velocidade) {
         this.peso = peso;
         this.idade = idade;

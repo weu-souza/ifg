@@ -5,9 +5,6 @@ import br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio02.Animal;
 public class Peixe extends Animal {
     private String caracteristica;
 
-    public Peixe() {
-
-    }
 
     public Peixe(double peso, Integer idade, String alimento, double velocidade, String caracteristica) {
         super(peso, idade, alimento, velocidade);

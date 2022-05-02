@@ -5,14 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 
-public class Painel1  extends JFrame{
+public class Painel1  extends Painel{
     private JButton camaroteSuperiorButton;
     private JButton camaroteInferiorButton;
     private JButton voltarButton;
     private JPanel painel1;
-    Ingresso i = new Ingresso(LocalDate.of(2021,05,23),"show de sertanejo",50);
-    Vip v = new Vip();
-    CamaroteSuperior camarote = new CamaroteSuperior(i.getDataEvento(),i.getNomeEvento(),i.getValorIngresso(), v.getAdicional(),"Pista A",2);
+    Vip v = new Vip(i.getDataEvento(),i.getNomeEvento(),i.getValorIngresso(),30);
+    CamaroteSuperior camarote = new CamaroteSuperior(i.getDataEvento(),i.getNomeEvento(),i.getValorIngresso(), v.getAdicional(),"Pista A",200);
     CamaroteInferior camarote1 = new CamaroteInferior(i.getDataEvento(),i.getNomeEvento(),i.getValorIngresso(),camarote.getAdicional(),"Pista B");
     public Painel1(){
         this.setContentPane(painel1);
@@ -43,13 +42,5 @@ public class Painel1  extends JFrame{
             }
         });
     }
-    public String camaroteInferior1(){
-        //camarote1.dadosInferior();
-        return"";
-    }
 
-    public String camaroteSuperior1(){
-       // camarote.dadosSuperior();
-        return "";
-    }
 }

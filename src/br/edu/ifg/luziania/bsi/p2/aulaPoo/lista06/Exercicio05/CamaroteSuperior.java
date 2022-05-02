@@ -5,13 +5,15 @@ import java.time.LocalDate;
 
 public class CamaroteSuperior extends Vip {
     private String localizacaoSuperior;
-    private double preçoSuperior;
+    private double precoSuperior;
 
 
-    public CamaroteSuperior(LocalDate dataEvento, String nomeEvento, double valorIngresso, double adicional, String localizacaoSuperior, double preçoSuperior) {
+
+
+    public CamaroteSuperior(LocalDate dataEvento, String nomeEvento, double valorIngresso, double adicional, String localizacaoSuperior, double precoSuperior) {
         super(dataEvento, nomeEvento, valorIngresso, adicional);
         this.localizacaoSuperior = localizacaoSuperior;
-        this.preçoSuperior = preçoSuperior;
+        setPreçoSuperior(precoSuperior);
     }
 
     public String getLocalizacaoSuperior() {
@@ -23,27 +25,28 @@ public class CamaroteSuperior extends Vip {
     }
 
     public double getPreçoSuperior() {
-        return preçoSuperior;
+        return precoSuperior;
     }
 
-    public void setPreçoSuperior(double preçoSuperior) {
-        this.preçoSuperior = preçoSuperior;
+    public void setPreçoSuperior(double precoSuperior) {
+        if (super.getValorIngresso()==0){
+            this.precoSuperior = 0;}
+        else{
+            this.precoSuperior = precoSuperior;
+        }
     }
+
 
     public Double valorSuperior() {
 
-        return valorVip() * getPreçoSuperior();
+        return valorVip() + getPreçoSuperior();
     }
 
     public void dadosSuperior() {
         JOptionPane.showMessageDialog(null,"\n"+"Dados Camarote superior"+
                 "\n" + "Localização Do Ingresso Superior: " + getLocalizacaoSuperior());
-        if (valorSuperior()>0){
-            JOptionPane.showMessageDialog(null,"Valor Do Ingresso Superior: " + valorSuperior());
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"valor invalido");
-        }
+        JOptionPane.showMessageDialog(null,"Valor Do Ingresso Superior: " + valorSuperior());
+
 
     }
 }

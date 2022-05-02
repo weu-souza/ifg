@@ -25,9 +25,6 @@ public class Proprietario {
     private String complemento;
     private LocalDate dataNascimento;
 
-    public Proprietario() {
-
-    }
 
     public Proprietario(String nome, String rg, String cpf, String telefone, String rua, String bairro, String cidade, String estado, String cep, String complemento, LocalDate dataNascimento) {
         this.nome = nome;

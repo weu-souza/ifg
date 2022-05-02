@@ -8,17 +8,6 @@ public class Cliente extends Pessoa {
     private String cpf;
     private String endereco;
 
-    public Cliente() {
-
-
-    }
-
-
-    public Cliente(String cpf, String endereco) {
-        this.cpf = cpf;
-        this.endereco = endereco;
-    }
-
     public Cliente(String nome, LocalDate nascimento, String genero, String cpf, String endereco) {
         super(nome, nascimento, genero);
         this.cpf = cpf;

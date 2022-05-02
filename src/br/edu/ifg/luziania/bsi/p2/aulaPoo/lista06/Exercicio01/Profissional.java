@@ -6,14 +6,6 @@ public class Profissional extends Pessoa {
     private Integer rg;
     private String cargo;
 
-    public Profissional() {
-
-    }
-
-    public Profissional(Integer rg, String cargo) {
-        this.rg = rg;
-        this.cargo = cargo;
-    }
 
     public Profissional(String nome, LocalDate nascimento, String genero, Integer rg, String cargo) {
         super(nome, nascimento, genero);

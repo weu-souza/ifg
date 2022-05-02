@@ -9,18 +9,15 @@ public class Ingresso {
     private String nomeEvento;
     private double valorIngresso;
 
-    public Ingresso() {
 
-    }
 
     public Ingresso(LocalDate dataEvento, String nomeEvento, double valorIngresso) {
         this.dataEvento = dataEvento;
         this.nomeEvento = nomeEvento;
-        this.valorIngresso = valorIngresso;
+        setValorIngresso(valorIngresso);
     }
 
     public LocalDate getDataEvento() {
-
         return dataEvento;
     }
 
@@ -37,28 +34,20 @@ public class Ingresso {
     }
 
     public double getValorIngresso() {
-
-
-        return valorIngresso ;
+        return valorIngresso;
     }
 
-    public void setValorIngresso() {
-        if(this.valorIngresso < 0){
-            System.out.println("valor invalido");
+    public void setValorIngresso(double valorIngresso) {
+        if(valorIngresso < 0){
+            this.valorIngresso = 0;
         }
         else{
-            System.out.println(this.valorIngresso);
+            this.valorIngresso=valorIngresso;
         }
-
     }
 
     public void imprimeValor() {
-        if(this.valorIngresso < 0){
-            JOptionPane.showMessageDialog(null,"valor invalido");
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"valor do ingresso normal: "+getValorIngresso());
-        }
+        JOptionPane.showMessageDialog(null,"valor do ingresso normal: "+valorIngresso);
     }
 
     public void imprimeDadosDoEvento() {

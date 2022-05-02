@@ -4,13 +4,9 @@ public class Imovel {
     private String endereco;
     private Double preco;
 
-    public Imovel() {
-
-    }
-
     public Imovel(String endereco, Double preco) {
         this.endereco = endereco;
-        this.preco = preco;
+        setPreco(preco);
     }
 
     public String getEndereco() {
@@ -26,18 +22,19 @@ public class Imovel {
     }
 
     public void setPreco(Double preco) {
-        this.preco = preco;
+        if (preco<0){
+            this.preco = 0.0;
+        }
+        else {
+            this.preco = preco;
+        }
+
     }
 
 
     public void dadosImovel() {
         System.out.println("Dados do imovel"+"\n"+"endereço: "+getEndereco());
-        if(getPreco()>0){
-            System.out.println("preço: "+getPreco()+" R$"+"\n");
-        }
-        else{
-            System.out.println("valor invalido!");
-        }
+        System.out.println("preço: "+getPreco()+" R$"+"\n");
 
     }
 }

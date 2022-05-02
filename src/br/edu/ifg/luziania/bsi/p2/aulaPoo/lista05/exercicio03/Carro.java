@@ -25,11 +25,7 @@ public class Carro {
 
 
 
-    public Carro() {
 
-
-
-    }
 
     public Carro(String modelo, String cor, String ano, String marca, String chassi, String proprietario, int velocidadeMaxima, int velocidadeAtual, int numeroDePortas, String tetoSolar, Integer numeroMarchas, String cambioAutomatico, int volumeDeCombustivel, int autonomia, String escolher) {
         this.modelo = modelo;
@@ -38,14 +34,14 @@ public class Carro {
         this.marca = marca;
         this.chassi = chassi;
         this.proprietario = proprietario;
-        this.velocidadeMaxima = velocidadeMaxima;
-        this.velocidadeAtual = velocidadeAtual;
-        this.numeroDePortas = numeroDePortas;
+        setVelocidadeMaxima(velocidadeMaxima);
+        setVelocidadeAtual(velocidadeAtual);
+        setNumeroDePortas(numeroDePortas);
         this.tetoSolar = tetoSolar;
-        this.numeroMarchas = numeroMarchas;
+        setNumeroMarchas(numeroMarchas);
         this.cambioAutomatico = cambioAutomatico;
-        this.volumeDeCombustivel = volumeDeCombustivel;
-        this.autonomia = autonomia;
+       setVolumeDeCombustivel(volumeDeCombustivel);
+        setAutonomia(autonomia);
         this.escolher = escolher;
     }
 
@@ -122,7 +118,11 @@ public class Carro {
     }
 
     public void setVelocidadeMaxima(int velocidadeMaxima) {
-        this.velocidadeMaxima = velocidadeMaxima;
+        if(velocidadeMaxima<0){
+            this.velocidadeMaxima = 0;
+        }
+        else {this.velocidadeMaxima = velocidadeMaxima;}
+
     }
 
     public int getVelocidadeAtual() {
@@ -132,7 +132,11 @@ public class Carro {
     }
 
     public void setVelocidadeAtual(int velocidadeAtual) {
-        this.velocidadeAtual = velocidadeAtual;
+        if(velocidadeAtual<0){
+            this.velocidadeAtual=0;
+        }
+        else{
+        this.velocidadeAtual = velocidadeAtual;}
     }
 
     public int getNumeroDePortas() {
@@ -164,8 +168,13 @@ public class Carro {
     }
 
     public void setNumeroMarchas(int numeroMarchas) {
+if (numeroMarchas<0){
+    this.numeroMarchas=0;
+}
+else {
+    this.numeroMarchas = numeroMarchas;
+}
 
-        this.numeroMarchas = numeroMarchas;
     }
 
     public String getCambioAutomatico() {
@@ -184,7 +193,11 @@ public class Carro {
     }
 
     public void setVolumeDeCombustivel(int volumeDeCombustivel) {
-        this.volumeDeCombustivel = volumeDeCombustivel;
+        if (volumeDeCombustivel<0){
+            this.volumeDeCombustivel=0;
+        }
+        else {
+        this.volumeDeCombustivel = volumeDeCombustivel;}
     }
 
     public int getAutonomia() {
@@ -194,101 +207,87 @@ public class Carro {
     }
 
     public void setAutonomia(int autonomia) {
-        this.autonomia = autonomia;
+        if(autonomia<0){
+            this.autonomia=0;
+        }
+        else{
+            this.autonomia = autonomia;
+
+        }
+
     }
 
 
     public String acelerar() {
         int i;
 
-        for (i = velocidadeAtual; i < this.velocidadeMaxima; i += 1) {
-            if (i == 20) {
-                System.out.println("acelerar: " + i + "km");
+        for (i = 0; i < this.velocidadeMaxima; i += 1) {
+            if (i == 0) {
+               numeroMarchas = 1;
+                System.out.println("marcha: " + numeroMarchas);
+            }
+            if (i == 21) {
+                numeroMarchas = 2;
+                System.out.println("marcha: " + numeroMarchas);
 
-                numeroMarchas = 1;
-                System.out.println("marcha: " + numeroMarchas);
             }
-            if (i > 20 && i < 40) {
-                numeroMarchas = 2;
-                System.out.println("marcha: " + numeroMarchas);
-                System.out.println("acelerar: " + i + "km");
-                numeroMarchas = 2;
-            }
-            if (i > 40 && i < 60) {
-                System.out.println("acelerar: " + i + "km");
+            if (i == 40 ) {
                 numeroMarchas = 3;
                 System.out.println("marcha: " + numeroMarchas);
             }
-            if (i > 60 && i < 80) {
-                System.out.println("acelerar: " + i + "km");
+            if (i == 60) {
                 numeroMarchas = 4;
                 System.out.println("marcha: " + numeroMarchas);
             }
-            if (i > 80 && i < 100) {
-                System.out.println("acelerar: " + i + "km");
+            if (i == 80) {
                 numeroMarchas = 5;
                 System.out.println("marcha: " + numeroMarchas);
             }
-            if (i > 100) {
-                System.out.println("acelerar: " + i + "km");
+            if (i == 100) {
                 numeroMarchas = 6;
                 System.out.println("marcha: " + numeroMarchas);
             }
 
             System.out.println("acelerar: " + i + "km");
         }
-        return ("acelerar: " + i + "km");
+        return ("velocidade maxima alcançada!");
 
     }
 
     public String freiar() {
         int i;
         for (i = velocidadeMaxima; i > 0; i -= 1) {
-            if (i < velocidadeMaxima && i > 100) {
+            if (i == velocidadeMaxima) {
                 numeroMarchas = 6;
                 System.out.println("marcha: " + numeroMarchas);
+                }
 
-                System.out.println("freiar: " + i + "km");
-
-
-            }
-
-            if (i < 100 && i > 80) {
+            if (i == 100) {
                 System.out.println("freiar: " + i + "km");
                 numeroMarchas = 5;
-                System.out.println("marcha: " + numeroMarchas);
             }
-            if (i < 80 && i > 60) {
-                System.out.println("freiar: " + i + "km");
+            if (i == 80) {
                 numeroMarchas = 4;
                 System.out.println("marcha: " + numeroMarchas);
             }
-            if (i < 60 && i > 40) {
-                System.out.println("freiar: " + i + "km");
+            if (i == 60) {
                 numeroMarchas = 3;
                 System.out.println("marcha: " + numeroMarchas);
             }
-            if (i < 40 && i > 20) {
-                System.out.println("freiar: " + i + "km");
+            if (i == 40) {
                 numeroMarchas = 2;
                 System.out.println("marcha: " + numeroMarchas);
             }
-            if (i < 20 && i > 1) {
-                System.out.println("freiar: " + i + "km");
+            if (i == 20) {
                 numeroMarchas = 1;
                 System.out.println("marcha: " + numeroMarchas);
             }
-            if (i == 0) {
-                System.out.println("freiar: " + i + "km");
-                numeroMarchas = 0;
-                System.out.println("marcha ré: " + numeroMarchas);
-            }
-
+            System.out.println("freiando... " + i + "km");
 
         }
 
 
-        return ("freiar: " + i + "km" + " indo para marcha ré...");
+        return (" indo para marcha ré...");
     }
 
 

@@ -1,9 +1,6 @@
 package br.edu.ifg.luziania.bsi.p2.aulaPoo.lista06.Exercicio02;
 
 public class Lobo extends Canino{
-    public Lobo() {
-
-    }
 
     public Lobo(double peso, Integer idade, String alimento, double velocidade, String habitat) {
         super(peso, idade, alimento, velocidade, habitat);

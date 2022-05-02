@@ -56,7 +56,9 @@ public class Datas {
                 "/" + getAno());
     }
     public void avançarDia(int dia){
-
-        System.out.println(hoje.getDayOfMonth()+1);
+        System.out.print("amanhã sera dia: ");
+        System.out.print(hoje.getDayOfMonth()+1);
+        System.out.print("/"+getMes());
+        System.out.print("/"+getAno());
     }
 }
